@@ -3,164 +3,146 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ujin Kwon | ujinf.net</title>
+    <title>ujinf.net</title>
     <meta
       name="description"
-      content="Ujin Kwon's portfolio for numerical optimization, control systems, vehicle dynamics, robotics, and telemetry analysis."
+      content="ujinf.net is a personal website for notes, links, experiments, and public work."
     >
     <link rel="canonical" href="https://ujinf.net/">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#home" aria-label="ujinf.net home">ujinf.net</a>
+      <a class="brand" href="/" aria-label="ujinf.net">
+        <span class="mark">u</span>
+        <span>ujinf.net</span>
+      </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#focus">Focus</a>
-        <a href="#contact">Contact</a>
+        <a href="#desk">Desk</a>
+        <a href="#directory">Directory</a>
+        <a href="#notes">Notes</a>
+        <a href="#elsewhere">Elsewhere</a>
       </nav>
     </header>
 
-    <main id="home">
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Mechanical & Computer Engineering</p>
-          <h1>Ujin Kwon · 권우진</h1>
+    <main>
+      <section class="hero" id="desk">
+        <div class="hero-main">
+          <p class="kicker">Personal web place</p>
+          <h1>notes, links, experiments.</h1>
           <p class="lead">
-            Numerical algorithms, control systems, and analysis tools for
-            vehicle dynamics, robotics, autonomous systems, and driving intelligence.
+            공개해도 되는 것들을 느슨하게 모아두는 개인 웹사이트. 프로젝트
+            쇼케이스보다, 다시 찾기 쉬운 작업대에 가깝게 운영합니다.
           </p>
-          <div class="hero-actions" aria-label="Featured links">
-            <a class="button primary" href="#projects">View Projects</a>
-            <a class="button" href="https://github.com/ujinf74">GitHub</a>
-          </div>
+          <form class="search" role="search">
+            <label for="site-search">Search</label>
+            <input
+              id="site-search"
+              type="search"
+              autocomplete="off"
+              placeholder="notes, github, archive..."
+            >
+          </form>
         </div>
-        <aside class="status-panel" aria-label="Current highlights">
-          <h2>Current Track</h2>
+
+        <div class="console" aria-label="Site status">
+          <div class="console-top">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           <dl>
             <div>
-              <dt>Research</dt>
-              <dd>Mapless autonomous reverse parking and constrained planning/control</dd>
+              <dt>mode</dt>
+              <dd>quiet website</dd>
             </div>
             <div>
-              <dt>Engineering</dt>
-              <dd>Segment-based telemetry analysis for racing data and coaching workflows</dd>
+              <dt>public</dt>
+              <dd>notes / links / experiments</dd>
             </div>
             <div>
-              <dt>Award</dt>
-              <dd>KSAE 2024 Smart e-Mobility Competition, EV Division</dd>
+              <dt>private</dt>
+              <dd>identity details / raw logs</dd>
             </div>
           </dl>
-        </aside>
+        </div>
       </section>
 
-      <section id="about" class="section intro-grid">
+      <section class="notice-bar" aria-label="Current site note">
+        <span>2026-04</span>
+        <p>새 도메인으로 옮기는 중. 내용은 가볍게 시작하고 필요할 때만 늘립니다.</p>
+      </section>
+
+      <section class="section" id="directory">
+        <div class="section-head">
+          <p class="kicker">Directory</p>
+          <h2>자주 여는 곳</h2>
+        </div>
+        <div class="link-grid" data-search-scope>
+          <a class="link-tile primary" href="https://github.com/ujinf74" data-search-item>
+            <span class="tile-label">GitHub</span>
+            <strong>code & repositories</strong>
+            <small>public work, experiments, source archives</small>
+          </a>
+          <a class="link-tile" href="https://ujinf74.github.io" data-search-item>
+            <span class="tile-label">Archive</span>
+            <strong>previous portfolio</strong>
+            <small>older project-oriented pages</small>
+          </a>
+          <a class="link-tile" href="https://github.com/ujinf74/ballistic-solver" data-search-item>
+            <span class="tile-label">Project</span>
+            <strong>ballistic-solver</strong>
+            <small>numerical intercept solver</small>
+          </a>
+          <a class="link-tile muted" href="#notes" data-search-item>
+            <span class="tile-label">Local</span>
+            <strong>notes shelf</strong>
+            <small>short writing and references</small>
+          </a>
+        </div>
+      </section>
+
+      <section class="section split" id="notes">
+        <div class="section-head">
+          <p class="kicker">Notes</p>
+          <h2>남길 것들</h2>
+        </div>
+        <div class="note-list" data-search-scope>
+          <article class="note" data-search-item>
+            <time datetime="2026-04">2026.04</time>
+            <h3>도메인과 사이트 구조</h3>
+            <p>GitHub Pages와 Cloudflare 위에서 가볍게 운영한다. 복잡한 빌드 체인은 아직 두지 않는다.</p>
+          </article>
+          <article class="note" data-search-item>
+            <time datetime="2026-04">2026.04</time>
+            <h3>공개 범위</h3>
+            <p>개인정보성 이력보다 링크, 메모, 공개 가능한 작업 기록을 우선한다.</p>
+          </article>
+          <article class="note" data-search-item>
+            <time datetime="2026-04">2026.04</time>
+            <h3>사이트 톤</h3>
+            <p>포트폴리오보다 개인 웹페이지. 설명은 짧게, 들어갈 곳은 명확하게.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section elsewhere" id="elsewhere">
         <div>
-          <p class="section-label">About</p>
-          <h2>Simulation-first engineering with clear diagnostics.</h2>
+          <p class="kicker">Elsewhere</p>
+          <h2>외부 링크</h2>
         </div>
-        <div class="prose">
-          <p>
-            I am a Mechanical & Computer Engineering student focused on optimal
-            control, numerical optimization, and dynamics. My work connects
-            real-time simulation, solver stability, robotics integration, and
-            vehicle-state analysis.
-          </p>
-          <p>
-            At HuVILab, I work as an undergraduate research intern and autonomous
-            driving team lead on occupancy-based mapless parking, planning under
-            constraints, and trajectory-analysis feedback systems.
-          </p>
-        </div>
-      </section>
-
-      <section id="projects" class="section">
-        <div class="section-heading">
-          <p class="section-label">Projects</p>
-          <h2>Selected Work</h2>
-        </div>
-        <div class="project-list">
-          <article class="project-card">
-            <div>
-              <p class="project-meta">C/C++ · Python · Unity/C#</p>
-              <h3>ballistic-solver</h3>
-              <p>
-                Simulate-first intercept optimizer for moving targets under
-                gravity and quadratic drag, with optional wind.
-              </p>
-            </div>
-            <ul>
-              <li>Fixed-step RK4 dynamics with air-relative quadratic drag</li>
-              <li>Levenberg-Marquardt closest-approach residual solving</li>
-              <li>Stable C ABI, PyPI package, and Unity P/Invoke path</li>
-            </ul>
-            <a class="text-link" href="https://github.com/ujinf74/ballistic-solver">Repository</a>
-          </article>
-
-          <article class="project-card">
-            <div>
-              <p class="project-meta">Isaac Sim · ROS 2 Humble · Autoware</p>
-              <h3>Mapless Autonomous Parking</h3>
-              <p>
-                Real-time mapless parking from online occupancy mapping to
-                occupancy-only Hybrid A* replanning and low-speed tracking.
-              </p>
-            </div>
-            <ul>
-              <li>Autoware-compatible pointcloud and frame adaptation</li>
-              <li>Sliding-window occupancy updates for bounded replanning cost</li>
-              <li>Stanley-based lateral control with reverse execution support</li>
-            </ul>
-          </article>
-
-          <article class="project-card">
-            <div>
-              <p class="project-meta">MATLAB · Telemetry · Driver Coaching</p>
-              <h3>Racing Analyze GUI</h3>
-              <p>
-                Segment-based racing telemetry GUI for comparing logged runs and
-                inspecting driver and vehicle behavior.
-              </p>
-            </div>
-            <ul>
-              <li>GPS-fix-based track core and segment reference generation</li>
-              <li>XY, TS, MAP, POLAR, KDE, and GG visualization modes</li>
-              <li>Built with Luxon Racing Team race-data workflows in mind</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="focus" class="section focus">
-        <div class="section-heading">
-          <p class="section-label">Focus</p>
-          <h2>Working areas</h2>
-        </div>
-        <ul class="focus-list">
-          <li>Numerical optimization and nonlinear dynamics solvers</li>
-          <li>Dynamics-aware planning and low-speed vehicle control</li>
-          <li>Telemetry comparison, visualization, and driving feedback tools</li>
-          <li>Real-time integration across C/C++, MATLAB, Python, ROS 2, and FFI</li>
-        </ul>
-      </section>
-
-      <section id="contact" class="section contact">
-        <div>
-          <p class="section-label">Contact</p>
-          <h2>Build notes, projects, and links will live here.</h2>
-        </div>
-        <div class="contact-links">
-          <a href="https://github.com/ujinf74">GitHub</a>
-          <a href="https://ujinf74.github.io">Previous Site</a>
+        <div class="pill-row">
+          <a href="https://github.com/ujinf74">github.com/ujinf74</a>
+          <a href="https://ujinf74.github.io">ujinf74.github.io</a>
           <a href="mailto:contact@ujinf.net">contact@ujinf.net</a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span>Copyright © ujinf.net. All rights reserved.</span>
-      <a href="#home">Top</a>
+      <span>ujinf.net</span>
+      <a href="#desk">top</a>
     </footer>
   </body>
 </html>
