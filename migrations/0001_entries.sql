@@ -13,20 +13,20 @@ ON entries (visible, created_at DESC);
 INSERT INTO entries (kind, title, body, created_at)
 VALUES
   (
-    'site',
-    '도메인과 사이트 구조',
-    'ujinf.net은 GitHub 저장소로 관리하고 Cloudflare Pages Functions 위에서 상호작용을 붙이는 방향으로 전환한다.',
+    'project',
+    'ballistic-solver',
+    'moving target을 gravity, quadratic drag, optional wind 조건에서 맞히기 위한 simulate-first intercept optimizer. RK4와 Levenberg-Marquardt 기반.',
     '2026-04-26T00:00:00Z'
   ),
   (
-    'archive',
-    '공개 범위',
-    '개인정보성 이력보다 공개 가능한 링크, 메모, 작업 기록을 우선한다.',
+    'project',
+    'Mapless Autonomous Parking',
+    'online occupancy mapping, occupancy-only Hybrid A* replanning, fraction-index interpolation, Stanley-based tracking을 연결한 mapless parking 작업.',
     '2026-04-26T00:01:00Z'
   ),
   (
-    'experiment',
-    '작은 상호작용',
-    '검색, 글 목록, 간단한 게시판 같은 기능을 먼저 붙이고 필요할 때 확장한다.',
+    'project',
+    'Racing Analyze GUI',
+    'multiple logged runs를 segment 기준으로 비교하고 driver/vehicle behavior를 시각화하는 MATLAB telemetry analysis workbench.',
     '2026-04-26T00:02:00Z'
   );

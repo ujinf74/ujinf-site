@@ -6,7 +6,7 @@
     <title>ujinf.net</title>
     <meta
       name="description"
-      content="ujinf.net is a personal website for notes, links, experiments, and public work."
+      content="ujinf.net is Ujin's personal web place for robotics, vehicle dynamics, telemetry tools, notes, and public project records."
     >
     <link rel="canonical" href="https://ujinf.net/">
     <link rel="stylesheet" href="styles.css">
@@ -19,187 +19,207 @@
         <span>ujinf.net</span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#desk">Desk</a>
-        <a href="#directory">Directory</a>
-        <a href="#board">Board</a>
-        <a href="#elsewhere">Elsewhere</a>
+        <a href="#notice">공지사항</a>
+        <a href="#projects">공유게시판</a>
+        <a href="#database">데이터베이스</a>
+        <a href="#board">기록</a>
+        <a href="#elsewhere">외부링크</a>
       </nav>
     </header>
 
     <main>
       <section class="hero" id="desk">
         <div class="hero-main">
-          <p class="kicker">Personal web place</p>
-          <h1>ujinf's web place.</h1>
+          <p class="kicker">Ujin's Web Place</p>
+          <h1>robotics, dynamics, telemetry.</h1>
           <p class="lead">
-            여기는 포트폴리오보다 개인 웹사이트에 가깝습니다. 공개해도 되는
-            메모, 링크, 작은 실험, 다시 찾아볼 자료를 천천히 모아두는 장소입니다.
+            기존 포트폴리오의 프로젝트와 자료를 바탕으로 만든 개인 웹사이트입니다.
+            완성된 이력서보다, 다시 찾아볼 수 있는 작업 기록과 공개 자료실에 가깝게 운영합니다.
           </p>
           <p class="hero-text">
-            완성된 결과물만 정리하는 페이지가 아니라, 나중에 다시 열어볼 수 있는
-            작업 기록을 남기는 쪽을 우선합니다. 개인정보나 자세한 이력은 줄이고,
-            공개 가능한 생각과 자료의 맥락을 남깁니다.
+            관심사는 optimal control, numerical optimization, dynamics, driving intelligence입니다.
+            이곳에는 ballistic-solver, mapless autonomous parking, racing telemetry GUI처럼
+            공개해도 되는 작업과 메모를 게시판처럼 쌓습니다.
           </p>
           <form class="search" role="search">
-            <label for="site-search">Search</label>
+            <label for="site-search">전체검색</label>
             <input
               id="site-search"
               type="search"
               autocomplete="off"
-              placeholder="notes, github, archive..."
+              placeholder="ballistic, parking, racing, dynamics..."
             >
           </form>
         </div>
 
         <figure class="hero-visual">
           <img src="assets/desk-hero.png" alt="A quiet desk with a laptop, notebook, keyboard, and warm lamp light.">
-          <figcaption>public desk, private details left out.</figcaption>
+          <figcaption>public project desk / private details removed</figcaption>
         </figure>
       </section>
 
-      <section class="notice-bar" aria-label="Current site note">
-        <span>2026-04</span>
-        <p>새 도메인으로 옮기는 중입니다. 처음에는 작게 시작하고, 실제로 다시 보게 되는 내용만 남깁니다.</p>
+      <section class="notice-bar" id="notice" aria-label="Current site note">
+        <span>공지</span>
+        <p>ujinf74.github.io의 내용을 기반으로 옮기는 중입니다. 디자인 방향은 개인 웹플레이스/게시판형 구조를 따릅니다.</p>
       </section>
 
-      <section class="section" id="directory">
+      <section class="section profile-strip" aria-label="Site profile">
+        <img src="assets/images/avatar.png" alt="Site avatar from the previous ujinf74.github.io site.">
+        <div>
+          <p class="kicker">About</p>
+          <h2>숫자, 동역학, 제어를 다루는 작업 기록</h2>
+          <p>
+            Mechanical & Computer Engineering 기반의 수치 알고리즘, 제어 시스템,
+            분석 도구 작업을 정리합니다. 로봇, 자율주행, 차량 동역학, 텔레메트리
+            분석처럼 기존 포트폴리오에 있던 주제를 이 사이트의 자료실로 옮깁니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
         <div class="section-head">
-          <p class="kicker">Directory</p>
-          <h2>바로가기</h2>
+          <p class="kicker">E2 공유게시판</p>
+          <h2>공개 프로젝트</h2>
         </div>
-        <div class="link-grid" data-search-scope>
-          <a class="link-tile primary" href="https://github.com/ujinf74" data-search-item>
-            <span class="tile-label">GitHub</span>
-            <strong>code & repositories</strong>
-            <small>public work, experiments, source archives</small>
-          </a>
-          <a class="link-tile" href="https://ujinf74.github.io" data-search-item>
-            <span class="tile-label">Archive</span>
-            <strong>previous portfolio</strong>
-            <small>older project-oriented pages</small>
-          </a>
-          <a class="link-tile" href="https://github.com/ujinf74/ballistic-solver" data-search-item>
-            <span class="tile-label">Project</span>
-            <strong>ballistic-solver</strong>
-            <small>numerical intercept solver</small>
-          </a>
-          <a class="link-tile muted" href="#notes" data-search-item>
-            <span class="tile-label">Local</span>
-            <strong>notes shelf</strong>
-            <small>short writing and references</small>
-          </a>
+        <div class="project-board" data-search-scope>
+          <article class="project-post feature-post" data-search-item>
+            <div class="post-copy">
+              <span>project / C/C++ · Python · Unity</span>
+              <h3>ballistic-solver</h3>
+              <p>
+                moving target을 gravity, quadratic drag, optional wind 조건에서 맞히기 위한
+                simulate-first intercept optimizer입니다. RK4로 비선형 projectile dynamics를
+                적분하고, closest-approach miss residual을 Levenberg-Marquardt로 줄입니다.
+              </p>
+              <ul>
+                <li>fixed-step RK4 with quadratic drag and wind as air velocity</li>
+                <li>damped least-squares, line-search/lambda tries, robust diagnostics</li>
+                <li>stable C ABI, PyPI package, Unity/C# P/Invoke integration</li>
+              </ul>
+              <div class="post-links">
+                <a href="https://github.com/ujinf74/ballistic-solver">Repo</a>
+                <a href="https://pypi.org/project/ballistic-solver/">PyPI</a>
+              </div>
+            </div>
+            <video controls playsinline preload="metadata">
+              <source src="assets/videos/ballistic_demo_low.mp4" type="video/mp4">
+            </video>
+          </article>
+
+          <article class="project-post feature-post" data-search-item>
+            <div class="post-copy">
+              <span>project / Isaac Sim · ROS 2 · Autoware</span>
+              <h3>Mapless Autonomous Parking</h3>
+              <p>
+                prebuilt pointcloud/vector map 없이 online occupancy mapping에서 출발해
+                occupancy-only Hybrid A* replanning과 low-speed tracking을 연결한
+                mapless parking 작업입니다.
+              </p>
+              <ul>
+                <li>Autoware compatibility layer, self-cropping, ground filtering</li>
+                <li>ego-fixed local OGM, global accumulation, stale-cell decay</li>
+                <li>fraction-index interpolation and Stanley-based lateral control</li>
+              </ul>
+            </div>
+            <video controls playsinline preload="metadata">
+              <source src="assets/videos/autopark_demo.mp4" type="video/mp4">
+            </video>
+          </article>
+
+          <article class="project-post feature-post" data-search-item>
+            <div class="post-copy">
+              <span>project / MATLAB · telemetry · driver coaching</span>
+              <h3>Racing Analyze GUI</h3>
+              <p>
+                여러 logged runs를 segment 기준으로 비교하고, driver/vehicle behavior를
+                시각화하는 racing telemetry analysis workbench입니다. real racing data의
+                visualization 및 coaching-oriented inspection workflow를 지원합니다.
+              </p>
+              <ul>
+                <li>GPS-fix-based track core and segment reference generation</li>
+                <li>XY, TS, MAP, POLAR, KDE, GG visualization modes</li>
+                <li>time-slider replay, pane pop-out, segment-level metrics extraction</li>
+              </ul>
+            </div>
+            <img src="assets/images/racing_analyze_gui.png" alt="Racing Analyze GUI screenshot.">
+          </article>
         </div>
       </section>
 
-      <section class="section shelf" aria-label="Site contents">
-        <div class="shelf-item">
-          <span>01</span>
-          <h3>웹사이트</h3>
-          <p>
-            이 사이트 자체를 작은 공개 작업실처럼 씁니다. 정돈된 소개보다,
-            앞으로 쌓일 글과 링크를 빠르게 찾는 구조를 우선합니다.
-          </p>
+      <section class="section" id="database">
+        <div class="section-head">
+          <p class="kicker">공유 데이터베이스</p>
+          <h2>작업 색인</h2>
         </div>
-        <div class="shelf-item">
-          <span>02</span>
-          <h3>공유 자료</h3>
-          <p>
-            코드 저장소, 이전 페이지, 실험 결과처럼 밖에 두어도 되는 자료를
-            모읍니다. 아직은 링크 중심이고, 필요하면 문서 페이지로 분리합니다.
-          </p>
-        </div>
-        <div class="shelf-item">
-          <span>03</span>
-          <h3>작업 노트</h3>
-          <p>
-            설정 과정, 시행착오, 짧은 생각을 남깁니다. 남에게 보이기 위한
-            성과 요약보다, 내가 다시 읽어도 쓸모 있는 글을 목표로 합니다.
-          </p>
+        <div class="database-table" data-search-scope>
+          <div class="db-row db-head">
+            <span>분류</span>
+            <span>항목</span>
+            <span>핵심</span>
+          </div>
+          <article class="db-row" data-search-item>
+            <span>solver</span>
+            <strong>ballistic-solver</strong>
+            <p>nonlinear dynamics, RK4, closest-approach residual, LM optimization, ABI/FFI</p>
+          </article>
+          <article class="db-row" data-search-item>
+            <span>autonomy</span>
+            <strong>Mapless Autonomous Parking</strong>
+            <p>occupancy mapping, Hybrid A*, trajectory interpolation, Stanley tracking, ROS 2</p>
+          </article>
+          <article class="db-row" data-search-item>
+            <span>telemetry</span>
+            <strong>Racing Analyze GUI</strong>
+            <p>segment comparison, multi-log replay, visualization modes, coaching workflow</p>
+          </article>
+          <article class="db-row" data-search-item>
+            <span>early work</span>
+            <strong>EV Gear Reduction Sizing</strong>
+            <p>MATLAB drivetrain sizing, torque-speed modeling, gear-ratio sweep, acceleration simulation</p>
+          </article>
         </div>
       </section>
 
       <section class="section feature-block">
         <div class="feature-copy">
-          <p class="kicker">Website</p>
-          <h2>무엇을 담을까</h2>
+          <p class="kicker">Focus</p>
+          <h2>작업의 공통 축</h2>
           <p>
-            이곳에는 완성된 자기소개보다 운영 중인 기록을 둡니다. 예를 들면
-            도메인 설정, GitHub Pages 배포, 작은 도구를 만들며 알게 된 점,
-            다시 찾아볼 링크, 프로젝트로 묶기에는 작은 실험 같은 것들입니다.
-          </p>
-          <p>
-            공개 범위는 의도적으로 좁게 잡습니다. 이름, 소속, 세부 일정처럼
-            굳이 첫 화면에 둘 필요가 없는 정보는 빼고, 사이트 방문자가 실제로
-            눌러볼 수 있는 자료와 글을 앞에 둡니다.
+            기존 사이트의 Focus와 Core Strengths를 가져와 사이트의 분류 기준으로 바꿨습니다.
+            단일 포트폴리오 설명보다, 앞으로 게시판과 데이터베이스를 정리할 때 쓰는 태그에 가깝습니다.
           </p>
         </div>
         <div class="feature-list" data-search-scope>
           <article data-search-item>
-            <span>Public</span>
-            <h3>읽을 수 있는 기록</h3>
-            <p>사이트 변경, 배포 과정, 공개 가능한 실험 메모를 짧게 정리합니다.</p>
+            <span>Numerics</span>
+            <h3>Numerical optimization & solvers</h3>
+            <p>least-squares, damping, ODE/RK4 integration, convergence diagnostics.</p>
           </article>
           <article data-search-item>
-            <span>Archive</span>
-            <h3>이전 페이지 보관</h3>
-            <p>기존 포트폴리오 사이트는 아카이브로 남기고, 이 사이트는 더 느슨하게 운영합니다.</p>
+            <span>Control</span>
+            <h3>Dynamics-aware planning & control</h3>
+            <p>low-speed vehicle maneuvers, constrained motion, reverse trajectory tracking.</p>
           </article>
           <article data-search-item>
-            <span>Links</span>
-            <h3>흩어진 링크 정리</h3>
-            <p>저장소, 문서, 외부 프로필처럼 자주 열게 되는 공개 링크를 모읍니다.</p>
+            <span>Telemetry</span>
+            <h3>Driving analysis tools</h3>
+            <p>segment-based comparison, vehicle-state visualization, replay-based inspection.</p>
           </article>
-        </div>
-      </section>
-
-      <section class="section split" id="notes">
-        <div class="section-head">
-          <p class="kicker">Notes</p>
-          <h2>남길 것들</h2>
-        </div>
-        <div class="note-list" data-search-scope>
-          <article class="note" data-search-item>
-            <time datetime="2026-04">2026.04</time>
-            <h3>도메인과 사이트 구조</h3>
-            <p>
-              `ujinf.net`은 Cloudflare DNS와 GitHub Pages 위에서 운영합니다. 지금은
-              HTML, CSS, 작은 JavaScript만 두고, 빌드 도구는 필요해질 때 추가합니다.
-            </p>
-          </article>
-          <article class="note" data-search-item>
-            <time datetime="2026-04">2026.04</time>
-            <h3>공개 범위</h3>
-            <p>
-              포트폴리오처럼 모든 이력을 나열하지 않습니다. 개인 정보는 줄이고,
-              공개해도 되는 링크와 글의 맥락을 먼저 둡니다.
-            </p>
-          </article>
-          <article class="note" data-search-item>
-            <time datetime="2026-04">2026.04</time>
-            <h3>사이트 톤</h3>
-            <p>
-              참고한 방향은 `rebirths.kr`처럼 개인이 직접 운영하는 웹 장소입니다.
-              과하게 꾸민 소개 페이지보다, 검색과 게시판과 링크가 있는 실사용 페이지에 가깝게 갑니다.
-            </p>
-          </article>
-          <article class="note" data-search-item>
-            <time datetime="2026-04">2026.04</time>
-            <h3>다음에 넣을 것</h3>
-            <p>
-              짧은 글 목록, 공개 가능한 작업 로그, 자주 찾는 자료 모음, 이전 사이트에서
-              옮겨올 만한 프로젝트 링크를 순서대로 채웁니다.
-            </p>
+          <article data-search-item>
+            <span>Integration</span>
+            <h3>Real-time systems</h3>
+            <p>C/C++, MATLAB, Python, ROS 2, ABI/FFI boundaries, reproducible builds.</p>
           </article>
         </div>
       </section>
 
       <section class="section board-preview" id="board">
         <div>
-          <p class="kicker">Board</p>
+          <p class="kicker">기록</p>
           <h2>작게 쓰는 게시판</h2>
           <p>
-            정적 표가 아니라 API로 읽고 쓰는 영역입니다. Cloudflare Pages Functions와
-            D1이 연결되면 여기의 항목이 서버에 저장됩니다.
+            이 영역은 Cloudflare Pages Functions와 D1이 연결되면 실제로 읽고 쓰는 게시판이 됩니다.
+            초기 항목은 기존 사이트의 프로젝트와 메모를 바탕으로 채웁니다.
           </p>
         </div>
         <div class="board-panel">
@@ -209,8 +229,8 @@
               <select name="kind">
                 <option value="note">note</option>
                 <option value="site">site</option>
+                <option value="project">project</option>
                 <option value="archive">archive</option>
-                <option value="experiment">experiment</option>
               </select>
             </label>
             <label>
@@ -237,17 +257,18 @@
 
       <section class="section elsewhere" id="elsewhere">
         <div>
-          <p class="kicker">Elsewhere</p>
-          <h2>외부 링크</h2>
+          <p class="kicker">외부링크</p>
+          <h2>기존 사이트와 연결</h2>
           <p>
-            연락이나 자세한 소개보다, 우선 공개 링크를 정리합니다. 필요한 정보는
-            각 링크의 문맥 안에서 확인할 수 있게 둡니다.
+            `ujinf74.github.io`는 기존 포트폴리오 아카이브로 남기고, 이 사이트는
+            상호작용 가능한 개인 웹플레이스로 확장합니다.
           </p>
         </div>
         <div class="pill-row">
           <a href="https://github.com/ujinf74">github.com/ujinf74</a>
           <a href="https://ujinf74.github.io">ujinf74.github.io</a>
-          <a href="mailto:contact@ujinf.net">contact@ujinf.net</a>
+          <a href="https://github.com/ujinf74/ballistic-solver">ballistic-solver</a>
+          <a href="mailto:ujin@tukorea.ac.kr">email</a>
         </div>
       </section>
     </main>
