@@ -153,9 +153,16 @@ h3 {
 
 .lead {
   max-width: 680px;
-  margin-bottom: 38px;
+  margin-bottom: 16px;
   color: var(--muted);
   font-size: 20px;
+}
+
+.hero-text {
+  max-width: 640px;
+  margin-bottom: 34px;
+  color: #39362f;
+  font-size: 17px;
 }
 
 .search {
@@ -256,7 +263,7 @@ h3 {
 }
 
 .shelf-item {
-  min-height: 190px;
+  min-height: 240px;
   padding: 24px;
   background: var(--paper);
   border: 1px solid var(--line);
@@ -272,6 +279,50 @@ h3 {
 }
 
 .shelf-item p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.feature-block {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(360px, 1.14fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.feature-copy {
+  padding: 30px;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.feature-copy h2 {
+  margin-bottom: 24px;
+}
+
+.feature-copy p {
+  color: rgba(255, 250, 240, 0.76);
+}
+
+.feature-list {
+  display: grid;
+  gap: 12px;
+}
+
+.feature-list article {
+  padding: 22px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.feature-list span {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.feature-list p {
   margin-bottom: 0;
   color: var(--muted);
 }
@@ -383,6 +434,42 @@ h3 {
   color: var(--muted);
 }
 
+.board-preview {
+  display: grid;
+  grid-template-columns: 0.55fr 1fr;
+  gap: 34px;
+}
+
+.board-preview table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.board-preview th,
+.board-preview td {
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.board-preview th {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13px;
+}
+
+.board-preview td:first-child {
+  color: var(--red);
+  font-weight: 900;
+}
+
+.board-preview tr:last-child td {
+  border-bottom: 0;
+}
+
 .elsewhere {
   display: grid;
   grid-template-columns: 0.6fr 1fr;
@@ -432,7 +519,9 @@ h3 {
 
 @media (max-width: 920px) {
   .hero,
+  .feature-block,
   .split,
+  .board-preview,
   .elsewhere {
     grid-template-columns: 1fr;
   }
