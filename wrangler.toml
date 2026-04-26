@@ -1,0 +1,8 @@
+name = "ujinf-site"
+compatibility_date = "2026-04-26"
+pages_build_output_dir = "public"
+
+[[d1_databases]]
+binding = "SITE_DB"
+database_name = "ujinf-site-db"
+database_id = "replace-after-d1-create"

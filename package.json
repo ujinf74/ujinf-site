@@ -1,0 +1,14 @@
+{
+  "name": "ujinf-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev public --compatibility-date=2026-04-26 --d1=SITE_DB",
+    "deploy": "wrangler pages deploy public --project-name=ujinf-site",
+    "db:migrate:local": "wrangler d1 migrations apply ujinf-site-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply ujinf-site-db --remote"
+  },
+  "devDependencies": {
+    "wrangler": "^4.14.1"
+  }
+}

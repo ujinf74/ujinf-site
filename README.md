@@ -1,29 +1,59 @@
 # ujinf.net
 
-Personal portfolio site for `ujinf.net`, built as a dependency-free static site for GitHub Pages.
+Personal website source for `ujinf.net`.
 
-## Why this setup
+This is not intended to stay as a static GitHub Pages site. GitHub is the source
+repository; Cloudflare Pages is the target runtime so the site can use Functions
+and D1 for interactive parts such as a small board, notes, and search-backed
+content.
 
-- GitHub Pages is enough for a personal portfolio, project archive, and lightweight notes.
-- Cloudflare can keep DNS, HTTPS, redirects, and future routing centralized.
-- A plain static site keeps the first version easy to deploy and replace later if a blog or CMS becomes necessary.
-
-## Deploy
-
-1. Create a public GitHub repository for this site.
-2. Push these files to the default branch.
-3. In GitHub, enable Pages from the default branch root.
-4. In Cloudflare DNS, point `ujinf.net` to GitHub Pages.
-5. Keep `CNAME` as `ujinf.net` so GitHub Pages preserves the custom domain.
-
-Recommended DNS records for an apex domain:
+## Structure
 
 ```txt
-A     ujinf.net  185.199.108.153
-A     ujinf.net  185.199.109.153
-A     ujinf.net  185.199.110.153
-A     ujinf.net  185.199.111.153
-CNAME www        ujinf74.github.io
+public/              Static assets served by Cloudflare Pages
+functions/api/       Pages Functions API routes
+migrations/          D1 schema and seed data
+wrangler.toml        Cloudflare local/deploy configuration
 ```
 
-After Pages is active, set the custom domain to `ujinf.net` in the repository settings and enable HTTPS.
+## Runtime Plan
+
+- Cloudflare Pages serves `public/`.
+- Cloudflare Pages Functions handles `/api/*`.
+- Cloudflare D1 stores board/note entries.
+- GitHub remains the source of truth for code changes.
+
+## Setup
+
+```bash
+npm install
+npx wrangler d1 create ujinf-site-db
+```
+
+Copy the created D1 `database_id` into `wrangler.toml`, replacing
+`replace-after-d1-create`.
+
+Apply migrations:
+
+```bash
+npm run db:migrate:local
+npm run db:migrate:remote
+```
+
+Run locally:
+
+```bash
+npm run dev
+```
+
+Deploy:
+
+```bash
+npm run deploy
+```
+
+## Domain
+
+Once the Cloudflare Pages project is deployed, move `ujinf.net` from GitHub
+Pages to the Cloudflare Pages custom domain. The existing GitHub Pages deployment
+can remain temporary until Cloudflare Pages is verified.
