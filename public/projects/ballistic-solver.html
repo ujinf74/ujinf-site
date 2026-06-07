@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ballistic-solver · ujinf.net</title>
+    <meta name="description" content="Deployable intercept solver for moving targets under gravity and quadratic drag, using an auxiliary-solution-induced residual.">
+    <link rel="canonical" href="https://ujinf.net/projects/ballistic-solver">
+    <script src="/theme-init.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+    <script src="/solver.js" defer></script>
+    <script src="/trajectory.js" defer></script>
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="site-header">
+        <a class="site-title" href="/">ujinf.net</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/capabilities" data-i18n="common.nav_capabilities">Capabilities</a>
+          <a href="/projects" aria-current="page" data-i18n="common.nav_projects">Projects</a>
+          <a href="/about" data-i18n="common.nav_about">About</a>
+          <a href="/contact" data-i18n="common.nav_contact">Contact</a>
+        </nav>
+        <div class="header-tools">
+          <button type="button" id="lang-toggle" class="tool-btn" aria-label="한국어로 보기">한국어</button>
+          <button type="button" id="theme-toggle" class="tool-btn" aria-label="Switch to light theme">◐ Light</button>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <h1>ballistic-solver</h1>
+
+        <div class="project-card">
+          <p class="eyebrow">Auxiliary residual method · C/C++ core · Stable C ABI · Python/PyPI · Unity/C# · Godot/.NET</p>
+          <p data-i18n-html="proj_ballistic.lead">
+            <b>ballistic-solver</b> is a deployable intercept solver for <b>moving targets</b> under <b>gravity</b> and <b>quadratic drag</b>, with optional <b>wind</b>.
+            The core method uses an <b>auxiliary-solution-induced residual</b>: drag-inclusive trajectory error is transformed through an auxiliary vacuum ballistic response before the nonlinear correction step.
+          </p>
+
+          <video class="media" controls playsinline preload="metadata">
+            <source src="/assets/videos/ballistic_demo_low.mp4" type="video/mp4">
+          </video>
+
+          <div class="btn-row">
+            <a class="btn" href="https://github.com/ujinf74/ballistic-solver">GitHub</a>
+            <a class="btn" href="https://pypi.org/project/ballistic-solver/">PyPI</a>
+            <a class="btn" href="/projects" data-i18n="common.btn_back">Back to Projects</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="proj_ballistic.problem_title">Problem</h3>
+          <p data-i18n="proj_ballistic.problem_body">
+            In drag-inclusive ballistic interception, the error is measured as a closest-approach miss vector in physical space,
+            while the correction variables are launch angles. A direct line-of-sight residual can give weak correction information
+            when those spaces are misaligned, especially in high-arc or strongly nonlinear cases.
+          </p>
+
+          <h3 data-i18n="proj_ballistic.method_title">Method</h3>
+          <ul>
+            <li data-i18n-html="proj_ballistic.method.0">Projectile dynamics include <b>quadratic drag</b>, optional <b>wind</b>, and fixed-step RK4 integration.</li>
+            <li data-i18n-html="proj_ballistic.method.1">The hit condition is solved against a <b>moving target</b>, with an extended API for constant-acceleration targets.</li>
+            <li data-i18n-html="proj_ballistic.method.2">A <b>vacuum ballistic auxiliary solver</b> converts drag-inclusive miss vectors into launch-angle residuals for the outer iteration.</li>
+            <li data-i18n-html="proj_ballistic.method.3">The nonlinear correction loop combines Levenberg-Marquardt damping, line search, and Broyden-style Jacobian refinement.</li>
+            <li data-i18n-html="proj_ballistic.method.4">The solver returns explicit <b>status codes</b>, <b>diagnostic messages</b>, and the <b>best result found</b> even when convergence is imperfect.</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="proj_ballistic.arch_title">Architecture</h3>
+          <div class="flow-diagram">
+            <div class="flow-step"><b data-i18n="proj_ballistic.arch.0h">Inputs</b><span data-i18n="proj_ballistic.arch.0s">relative target motion, speed, drag, solver params</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><b data-i18n="proj_ballistic.arch.1h">Simulation</b><span data-i18n="proj_ballistic.arch.1s">RK4 projectile integration with drag and wind</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><b data-i18n="proj_ballistic.arch.2h">Auxiliary Residual</b><span data-i18n="proj_ballistic.arch.2s">vacuum ballistic response maps miss into launch-angle correction</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><b data-i18n="proj_ballistic.arch.3h">Solve</b><span data-i18n="proj_ballistic.arch.3s">Levenberg-Marquardt + line search + Broyden-style Jacobian refinement</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><b data-i18n="proj_ballistic.arch.4h">Deploy</b><span data-i18n="proj_ballistic.arch.4s">C ABI, Python package, Unity/C#, .NET, and Godot interop</span></div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="proj_ballistic.solver_title">Interactive Solver</h3>
+          <p data-i18n="proj_ballistic.solver_intro">
+            Enter a relative position, relative velocity, and muzzle speed to compute low/high-arc launch angles in the browser,
+            then watch the trajectories. The request hits the same model as the package: RK4 drag/wind integration, closest-approach residual, and an LM solve.
+          </p>
+          <div class="solver-grid">
+            <form class="solver-form" id="solver-form">
+              <fieldset>
+                <legend data-i18n="proj_ballistic.f_pos">relative position [m]</legend>
+                <label><span>x</span><input name="px" type="number" step="0.01" value="120"></label>
+                <label><span>y</span><input name="py" type="number" step="0.01" value="20"></label>
+                <label><span>z</span><input name="pz" type="number" step="0.01" value="8"></label>
+              </fieldset>
+              <fieldset>
+                <legend data-i18n="proj_ballistic.f_vel">relative velocity [m/s]</legend>
+                <label><span>vx</span><input name="vx" type="number" step="0.01" value="4"></label>
+                <label><span>vy</span><input name="vy" type="number" step="0.01" value="0"></label>
+                <label><span>vz</span><input name="vz" type="number" step="0.01" value="0"></label>
+              </fieldset>
+              <fieldset>
+                <legend data-i18n="proj_ballistic.f_cond">conditions</legend>
+                <label><span>speed</span><input name="speed" type="number" min="0.01" step="0.01" value="80"></label>
+                <label><span>kDrag</span><input name="kDrag" type="number" min="0" step="0.000001" value="0.00035"></label>
+                <label><span>gravity</span><input name="gravity" type="number" min="0" step="0.001" value="9.80665"></label>
+                <label><span>maxTime</span><input name="maxTime" type="number" min="0.1" step="0.1" value="30"></label>
+              </fieldset>
+              <fieldset>
+                <legend data-i18n="proj_ballistic.f_wind">wind [m/s]</legend>
+                <label><span>wx</span><input name="windX" type="number" step="0.01" value="0"></label>
+                <label><span>wy</span><input name="windY" type="number" step="0.01" value="0"></label>
+                <label><span>wz</span><input name="windZ" type="number" step="0.01" value="0"></label>
+              </fieldset>
+              <fieldset>
+                <legend data-i18n="proj_ballistic.f_num">numerics</legend>
+                <label><span>preset</span><select name="preset"><option value="fast">fast</option><option value="balanced" selected>balanced</option><option value="precise">precise</option></select></label>
+                <label><span>dt</span><input name="dt" type="number" min="0.0001" step="0.001" value="0.01"></label>
+                <label><span>tolMiss</span><input name="tolMiss" type="number" min="0.000001" step="0.001" value="0.01"></label>
+                <label><span>maxIter</span><input name="maxIter" type="number" min="1" step="1" value="20"></label>
+              </fieldset>
+              <p class="solver-note" data-i18n="proj_ballistic.solver_note">Coordinates: x forward, y right, z up. The HTTP API uses RK4 drag/wind + closest-approach residual + LM solver.</p>
+            </form>
+            <div class="solver-output" id="solver-output" aria-live="polite">
+              <article>
+                <span data-i18n="proj_ballistic.low_arc">low arc</span>
+                <strong id="low-pitch">-</strong>
+                <p id="low-detail" data-i18n="proj_ballistic.waiting">waiting for input</p>
+              </article>
+              <article>
+                <span data-i18n="proj_ballistic.high_arc">high arc</span>
+                <strong id="high-pitch">-</strong>
+                <p id="high-detail" data-i18n="proj_ballistic.waiting">waiting for input</p>
+              </article>
+              <article class="solver-status">
+                <span data-i18n="proj_ballistic.solve_status">solve status</span>
+                <p id="solver-status" data-i18n="proj_ballistic.ready">ready</p>
+              </article>
+            </div>
+          </div>
+          <div class="traj-wrap">
+            <canvas id="traj-canvas" role="img" aria-label="Trajectory plot of low and high arcs"></canvas>
+            <div class="traj-legend">
+              <span><i style="background:var(--accent);"></i><span data-i18n="proj_ballistic.legend_low">low arc</span></span>
+              <span><i style="background:var(--accent-3);"></i><span data-i18n="proj_ballistic.legend_high">high arc</span></span>
+              <span><i style="background:var(--muted);"></i><span data-i18n="proj_ballistic.legend_target">target</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="proj_ballistic.built_title">What I Built</h3>
+          <ul>
+            <li data-i18n-html="proj_ballistic.built.0"><b>Auxiliary-solution-induced residual method</b> for nonlinear correction when residual space and correction-variable space are not directly aligned.</li>
+            <li data-i18n-html="proj_ballistic.built.1"><b>Header-only C++ core</b> focused on solver logic, with separate bindings for runtime integration.</li>
+            <li data-i18n-html="proj_ballistic.built.2"><b>Stable C ABI</b> with plain-C data layout and fixed-size arrays for FFI-safe integration.</li>
+            <li data-i18n-html="proj_ballistic.built.3"><b>Python package</b> with presets, utility helpers, and prebuilt binaries through PyPI.</li>
+            <li data-i18n-html="proj_ballistic.built.4"><b>Unity/C#, .NET, and Godot paths</b> so the same native solver can be used in game/runtime contexts.</li>
+            <li data-i18n-html="proj_ballistic.built.5"><b>Failure handling</b> through explicit status codes such as invalid input, Jacobian failure, line-search rejection, and max-iteration exhaustion.</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="proj_ballistic.result_title">Result</h3>
+          <ul>
+            <li data-i18n="proj_ballistic.result.0">Built a deployable nonlinear interception solver with explicit physics assumptions and status outputs.</li>
+            <li data-i18n="proj_ballistic.result.1">Packaged the same core through a C ABI, Python/PyPI, Unity/C#, .NET, and Godot integration paths.</li>
+            <li data-i18n="proj_ballistic.result.2">Benchmarked the auxiliary residual method against direct line-of-sight residual correction in the ICROS 2026 manuscript.</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="proj_ballistic.research_title">Research Result</h3>
+          <p data-i18n="proj_ballistic.research_body">
+            In the ICROS 2026 manuscript, the auxiliary residual was compared against direct line-of-sight residual correction
+            under identical outer-iteration settings on 10,000 stationary high-arc interception cases.
+          </p>
+          <table class="result-table">
+            <thead>
+              <tr>
+                <th data-i18n="proj_ballistic.th_method">Method</th>
+                <th data-i18n="proj_ballistic.th_failure">Failure Rate</th>
+                <th data-i18n="proj_ballistic.th_runtime">Mean Runtime</th>
+                <th data-i18n="proj_ballistic.th_miss">P95 Miss</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="proj_ballistic.r_direct">Direct line-of-sight residual</td>
+                <td>50.25%</td>
+                <td>6.791 ms</td>
+                <td>8.498e+02 m</td>
+              </tr>
+              <tr>
+                <td data-i18n="proj_ballistic.r_aux">Auxiliary-solution-induced residual</td>
+                <td>0.00%</td>
+                <td>3.748 ms</td>
+                <td>8.128e-03 m</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="proj_ballistic.bench_title">Package Benchmarks</h3>
+          <p data-i18n="proj_ballistic.bench_body">From the repository README benchmark on a local Windows release build over 500 generated linear-target cases:</p>
+          <table class="result-table">
+            <thead>
+              <tr>
+                <th data-i18n="proj_ballistic.th_preset">Preset</th>
+                <th data-i18n="proj_ballistic.th_median">Median Solve Time</th>
+                <th data-i18n="proj_ballistic.th_p95">p95 Solve Time</th>
+                <th data-i18n="proj_ballistic.th_miss">p95 Miss</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>fast</td><td>0.094 ms</td><td>0.228 ms</td><td>3.834e-02 m</td></tr>
+              <tr><td>balanced</td><td>0.182 ms</td><td>0.452 ms</td><td>5.351e-03 m</td></tr>
+              <tr><td>precise</td><td>0.199 ms</td><td>0.569 ms</td><td>5.742e-06 m</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="proj_ballistic.higharc_title">High-Arc Update</h3>
+          <p data-i18n="proj_ballistic.higharc_body">After adding the v0.6 moving-target convergence defaults, high-arc generated cases improved substantially in the repository benchmark.</p>
+          <table class="result-table">
+            <thead>
+              <tr>
+                <th data-i18n="proj_ballistic.th_config">Configuration</th>
+                <th data-i18n="proj_ballistic.th_success">Success</th>
+                <th data-i18n="proj_ballistic.th_median2">Median Runtime</th>
+                <th data-i18n="proj_ballistic.th_p95runtime">P95 Runtime</th>
+                <th data-i18n="proj_ballistic.th_miss">P95 Miss</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-i18n="proj_ballistic.cfg_prev">Previous core path</td><td>382/500</td><td>4.301 ms</td><td>27.124 ms</td><td>3.227e+02 m</td></tr>
+              <tr><td>v0.6.0 defaults</td><td>490/500</td><td>1.845 ms</td><td>2.535 ms</td><td>8.809e-03 m</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="proj_ballistic.limits_title">Known Limits</h3>
+          <ul>
+            <li data-i18n="proj_ballistic.limits.0">The runtime using the solver must match the same physics and integration assumptions; different timesteps or integrators can invalidate the hit.</li>
+            <li data-i18n="proj_ballistic.limits.1">Strongly nonlinear cases are handled numerically, so convergence quality depends on solver settings and problem conditioning.</li>
+            <li data-i18n="proj_ballistic.limits.2">Non-converged cases return explicit status codes and the best result found, so callers can decide how to handle difficult shots.</li>
+          </ul>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <span data-i18n="common.footer_name">ujinf.net · Ujin Kwon · 권우진</span>
+        <a href="https://github.com/ujinf74">github.com/ujinf74</a>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Racing Analyze GUI · ujinf.net</title>
+    <meta name="description" content="MATLAB segment-based telemetry workbench for multi-run loading, comparison, synchronized replay, and metrics extraction.">
+    <link rel="canonical" href="https://ujinf.net/projects/racing-analyze-gui">
+    <script src="/theme-init.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="site-header">
+        <a class="site-title" href="/">ujinf.net</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/capabilities" data-i18n="common.nav_capabilities">Capabilities</a>
+          <a href="/projects" aria-current="page" data-i18n="common.nav_projects">Projects</a>
+          <a href="/about" data-i18n="common.nav_about">About</a>
+          <a href="/contact" data-i18n="common.nav_contact">Contact</a>
+        </nav>
+        <div class="header-tools">
+          <button type="button" id="lang-toggle" class="tool-btn" aria-label="한국어로 보기">한국어</button>
+          <button type="button" id="theme-toggle" class="tool-btn" aria-label="Switch to light theme">◐ Light</button>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <h1>Racing Analyze GUI</h1>
+
+        <div class="project-card">
+          <p class="eyebrow">MATLAB · Multi-log telemetry analysis · Replay · Segment metrics</p>
+          <p data-i18n-html="proj_gui.lead">
+            <b>Racing Analyze GUI</b> is a segment-based telemetry workbench for loading multiple runs,
+            comparing the same track region across runs, replaying them in time, and extracting metrics for coaching-oriented review.
+          </p>
+
+          <img class="media" src="/assets/images/racing_analyze_gui.png" alt="Racing Analyze GUI">
+
+          <div class="btn-row">
+            <a class="btn" href="/projects" data-i18n="common.btn_back">Back to Projects</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="proj_gui.workflow_title">Workflow</h3>
+          <div class="flow-diagram">
+            <div class="flow-step"><b data-i18n="proj_gui.wf.0h">Track Build</b><span data-i18n="proj_gui.wf.0s">reference core + segment definition from a track file</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><b data-i18n="proj_gui.wf.1h">Log Load</b><span data-i18n="proj_gui.wf.1s">scan root folders, filter includes, cache selected runs</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><b data-i18n="proj_gui.wf.2h">Segment Slice</b><span data-i18n="proj_gui.wf.2s">All, S0, S1..Sn, S(n+1)</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><b data-i18n="proj_gui.wf.3h">Replay + Plots</b><span data-i18n="proj_gui.wf.3s">XY, TS, MAP, POLAR, KDE, GG with synchronized replay</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><b data-i18n="proj_gui.wf.4h">Metrics</b><span data-i18n="proj_gui.wf.4s">segment time, speed stats, acceleration indicators</span></div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="common.what_i_built">What I Built</h3>
+          <ul>
+            <li data-i18n-html="proj_gui.built.0"><b>Track-core and segment workflow</b> so repeated runs can be compared against the same reference structure.</li>
+            <li data-i18n-html="proj_gui.built.1"><b>Multi-log loading and caching</b> for quick switching after one analysis pass.</li>
+            <li data-i18n-html="proj_gui.built.2"><b>Synchronized replay system</b> with time slider, play/pause/stop, speed control, and pane-aware markers.</li>
+            <li data-i18n-html="proj_gui.built.3"><b>Flexible pane system</b> with XY, TS, MAP, POLAR, KDE, and GG views plus per-pane rerender/pop-out tools.</li>
+            <li data-i18n-html="proj_gui.built.4"><b>Channel-flexible visualization</b> where arbitrary logged channels can be assigned to axes or color.</li>
+            <li data-i18n-html="proj_gui.built.5"><b>Metrics extraction</b> for segment time, speed statistics, and acceleration-related indicators.</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="proj_gui.metrics_title">Metrics Exposed In The App</h3>
+          <ul>
+            <li data-i18n-html="proj_gui.metrics.0"><b>segTime</b>: selected-segment time</li>
+            <li data-i18n-html="proj_gui.metrics.1"><b>vmin / vmean / vmax</b>: speed min / mean / max</li>
+            <li data-i18n-html="proj_gui.metrics.2"><b>vin / vout</b>: speed at segment entry / exit</li>
+            <li data-i18n-html="proj_gui.metrics.3"><b>arms / a95 / amax</b>: acceleration magnitude statistics for quick comparison</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="common.result">Result</h3>
+          <ul>
+            <li data-i18n="proj_gui.result.0">Built a reusable telemetry inspection workflow around track segments, replay, and multi-run comparison.</li>
+            <li data-i18n="proj_gui.result.1">Implemented pane state, replay control, flexible channel mapping, and segment metrics as UI features.</li>
+            <li data-i18n="proj_gui.result.2">Connected the analysis workflow to the same racing telemetry data collection path.</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="proj_gui.evidence_title">Evidence</h3>
+          <ul>
+            <li data-i18n="proj_gui.evidence.0">The GUI is structured as a workbench: track build, run caching, segment slicing, replay, plots, and metrics are separate steps in one flow.</li>
+            <li data-i18n="proj_gui.evidence.1">The app supports multiple analysis views and pane-level tools, which is stronger evidence of repeated real use than a single static screenshot.</li>
+            <li data-i18n-html="proj_gui.evidence.2">The telemetry workflow is connected upstream to the <a href="/projects/racing-telemetry-stack">Racing Telemetry Stack</a>, so this page describes the analysis side of the same system.</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="proj_gui.scope_title">Validation Scope</h3>
+          <ul>
+            <li data-i18n="proj_gui.scope.0">This page focuses on implemented UI behavior, replay workflow, and exposed segment metrics.</li>
+            <li data-i18n="proj_gui.scope.1">The strongest evidence is the reusable analysis workflow: track build, multi-run loading, synchronized replay, flexible plots, and metrics extraction.</li>
+          </ul>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <span data-i18n="common.footer_name">ujinf.net · Ujin Kwon · 권우진</span>
+        <a href="https://github.com/ujinf74">github.com/ujinf74</a>
+      </footer>
+    </div>
+  </body>
+</html>

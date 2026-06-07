@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects · ujinf.net</title>
+    <meta name="description" content="Representative projects: nonlinear solver design, real-vehicle autonomy integration, field telemetry runtime, and analysis-tool construction.">
+    <link rel="canonical" href="https://ujinf.net/projects">
+    <script src="/theme-init.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="site-header">
+        <a class="site-title" href="/">ujinf.net</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/capabilities" data-i18n="common.nav_capabilities">Capabilities</a>
+          <a href="/projects" aria-current="page" data-i18n="common.nav_projects">Projects</a>
+          <a href="/about" data-i18n="common.nav_about">About</a>
+          <a href="/contact" data-i18n="common.nav_contact">Contact</a>
+        </nav>
+        <div class="header-tools">
+          <button type="button" id="lang-toggle" class="tool-btn" aria-label="한국어로 보기">한국어</button>
+          <button type="button" id="theme-toggle" class="tool-btn" aria-label="Switch to light theme">◐ Light</button>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <h1 data-i18n="projects.h1">Projects</h1>
+
+        <div class="project-card">
+          <p class="eyebrow" data-i18n="projects.eyebrow">Representative Projects</p>
+          <p data-i18n-html="projects.intro">
+            Four projects covering solver design, real-vehicle autonomy integration, field telemetry runtime, and analysis-tool construction.
+            If you want the summary first, start from <a href="/capabilities">Capabilities</a>.
+          </p>
+        </div>
+
+        <div class="project-search">
+          <input id="project-search-input" class="search-bar" type="search" placeholder="Search projects…" aria-label="Search projects" data-i18n-attr="placeholder:projects.search_ph,aria-label:projects.search_ph">
+          <div class="tag-chips" role="group" aria-label="Filter by tag">
+            <button type="button" class="tag-chip" data-tag="solver" aria-pressed="false">solver</button>
+            <button type="button" class="tag-chip" data-tag="autonomy" aria-pressed="false">autonomy</button>
+            <button type="button" class="tag-chip" data-tag="telemetry" aria-pressed="false">telemetry</button>
+            <button type="button" class="tag-chip" data-tag="analysis" aria-pressed="false">analysis</button>
+            <button type="button" class="tag-chip" data-tag="c++" aria-pressed="false">C++</button>
+            <button type="button" class="tag-chip" data-tag="python" aria-pressed="false">Python</button>
+            <button type="button" class="tag-chip" data-tag="matlab" aria-pressed="false">MATLAB</button>
+            <button type="button" class="tag-chip" data-tag="ros2" aria-pressed="false">ROS2</button>
+          </div>
+          <p class="search-empty" id="search-empty" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="project-card" data-search-item data-tags="solver c++ python unity ballistic rk4 optimization">
+          <h3 data-i18n-html="projects.ballistic_title">ballistic-solver <small style="opacity:.7;">(C/C++ · Python · Unity/C#)</small></h3>
+
+          <p data-i18n-html="projects.ballistic_desc">
+            <b>Simulate-first intercept optimizer</b> for moving targets under <b>gravity</b> and <b>quadratic drag</b> (+ optional wind).
+            It integrates nonlinear projectile dynamics (RK4) and solves launch angles (θ, φ) using an <b>auxiliary-solution-induced residual</b>
+            with <b>Levenberg–Marquardt</b>, line search, and Broyden-style Jacobian refinement.
+          </p>
+
+          <video class="media" controls playsinline preload="metadata">
+            <source src="/assets/videos/ballistic_demo_low.mp4" type="video/mp4">
+          </video>
+
+          <p style="margin-top:.8rem;"><b data-i18n="common.what_i_built">What I built</b></p>
+          <ul>
+            <li data-i18n-html="projects.ballistic.b0"><b>Dynamics</b>: fixed-step RK4 with quadratic drag (+ wind as air-velocity)</li>
+            <li data-i18n-html="projects.ballistic.b1"><b>Residual method</b>: drag-inclusive miss transformed through an auxiliary vacuum ballistic response</li>
+            <li data-i18n-html="projects.ballistic.b2"><b>Numerical optimization</b>: auxiliary residual → LM (damped least squares) + line-search/lambda tries</li>
+            <li data-i18n-html="projects.ballistic.b3"><b>Speed</b>: Broyden-style Jacobian refinement to reduce full re-linearizations</li>
+            <li data-i18n-html="projects.ballistic.b4"><b>Robust outputs</b>: explicit status/message + best-effort solution even on non-ideal convergence</li>
+            <li data-i18n-html="projects.ballistic.b5"><b>Deployment</b>: stable C ABI (FFI-ready), PyPI package with prebuilt binaries, Unity/C# via P/Invoke</li>
+          </ul>
+
+          <div class="btn-row">
+            <a class="btn" href="/projects/ballistic-solver" data-i18n="common.btn_detailed">Detailed page</a>
+            <a class="btn" href="https://github.com/ujinf74/ballistic-solver">Repo</a>
+            <a class="btn" href="https://pypi.org/project/ballistic-solver/">PyPI</a>
+          </div>
+
+          <div class="result-strip">
+            <span><b data-i18n="projects.verified_benchmark">Verified benchmark</b></span>
+            <span>fast 0.094 ms median</span>
+            <span>balanced 0.182 ms median</span>
+            <span>precise 0.199 ms median</span>
+          </div>
+
+          <div class="proof-callout">
+            <b data-i18n="common.result">Result</b>
+            <span data-i18n="projects.ballistic_result">Paper-backed residual method, packaged C++/Python runtime, benchmark tables, and explicit solver status outputs.</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-search-item data-tags="autonomy ros2 c++ lidar fast-lio ioniq parking occupancy">
+          <h3 data-i18n-html="projects.parking_title">Mapless Autonomous Parking <small style="opacity:.7;">(Hyundai Ioniq · ROS 2 Humble · Autoware Universe · FAST-LIO)</small></h3>
+
+          <p data-i18n-html="projects.parking_desc">
+            <b>Real-vehicle mapless autonomous parking</b> on a Hyundai Ioniq without prebuilt pointcloud/vector maps:
+            <b>FAST-LIO odometry → C++ LiDAR occupancy-grid updates → RViz goal-pose planning → delay-aware trajectory following → Ioniq CAN command path</b>.
+          </p>
+
+          <video class="media" controls playsinline preload="metadata">
+            <source src="/assets/videos/real-vehicle_demo.mp4" type="video/mp4">
+          </video>
+
+          <p style="margin-top:.8rem;"><b data-i18n="common.what_i_built">What I built</b></p>
+          <ul>
+            <li data-i18n-html="projects.parking.b0"><b>Real-vehicle integration</b>: connected the parking system to an existing Hyundai Ioniq research platform</li>
+            <li data-i18n-html="projects.parking.b1"><b>FAST-LIO bridge</b>: LiDAR-inertial odometry aligned into the vehicle localization and TF path</li>
+            <li data-i18n-html="projects.parking.b2"><b>Autoware compatibility layer</b>: pointcloud fields/frame adaptation + self-cropping + ground filtering</li>
+            <li data-i18n-html="projects.parking.b3"><b>Occupancy mapping</b>: native C++ pointcloud occupancy-grid updates with timestamp pairing, log-odds sparse tiles, and <b>decay back to unknown</b> for stale cells</li>
+            <li data-i18n-html="projects.parking.b4"><b>Compute-bounded replanning</b>: occupancy <b>tiling</b> + <b>sliding-window ROI</b> updates to reduce cell count and keep replanning tractable</li>
+            <li data-i18n-html="projects.parking.b5"><b>Planning without vector maps</b>: custom node using Autoware freespace planning algorithms from occupancy-only + vehicle constraints</li>
+            <li data-i18n-html="projects.parking.b6"><b>Trajectory processing</b>: resampling / filling and continuous-reference preparation for low-speed forward/reverse maneuver tracking</li>
+            <li data-i18n-html="projects.parking.b7"><b>Execution layer</b>: delay-aware follower using measured steering/longitudinal response delay for pose prediction, velocity prediction, and separate reference preview</li>
+            <li data-i18n-html="projects.parking.b8"><b>Ioniq vehicle interface</b>: Autoware-compatible command output connected to the vehicle CAN interface</li>
+            <li data-i18n-html="projects.parking.b9"><b>Real-time engineering &amp; debugging</b>: timing/backlog tuning, RViz2 visualization (occupancy grid/trajectory/vehicle), and CLI status reporting</li>
+          </ul>
+
+          <div class="btn-row">
+            <a class="btn" href="/projects/mapless-autonomous-parking" data-i18n="common.btn_detailed">Detailed page</a>
+          </div>
+
+          <div class="proof-callout">
+            <b data-i18n="common.result">Result</b>
+            <span data-i18n="projects.parking_result">Real Hyundai Ioniq parking execution with FAST-LIO odometry, C++ LiDAR occupancy-grid mapping, delay-aware trajectory following, and CAN-facing command output.</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-search-item data-tags="telemetry python raspberry-pi rtk ntrip gnss zed-f9r cloudflare">
+          <h3 data-i18n-html="projects.telemetry_title">Racing Telemetry Stack <small style="opacity:.7;">(Python · Raspberry Pi · ZED-F9R · RTK/NTRIP · Cloudflare Worker)</small></h3>
+
+          <p data-i18n-html="projects.telemetry_desc">
+            <b>Car-side telemetry runtime</b> for racing data collection, built around a Raspberry Pi and <b>u-blox ZED-F9R GPS/IMU receiver</b>.
+            The system configures the receiver at startup, collects high-rate UBX GPS/IMU messages, injects RTCM correction data from an
+            <b>NTRIP caster</b>, writes buffered CSV/UBX logs, and publishes live debug state to a browser dashboard through a
+            <b>Cloudflare Worker + Durable Object + SSE</b> pipeline.
+          </p>
+
+          <p style="margin-top:.8rem;"><b data-i18n="common.what_i_built">What I built</b></p>
+          <ul>
+            <li data-i18n-html="projects.telemetry.b0"><b>Raspberry Pi runtime</b>: systemd-managed Python collector with boot persistence, automatic restart, environment-based configuration, and pre-start ZED-F9R configuration</li>
+            <li data-i18n-html="projects.telemetry.b1"><b>Receiver configuration</b>: automated UART/UBX setup for 20 Hz measurement, NAV-PVT, HPPOSLLH, RAWX, ESF-RAW, MON-HW/RF, and RTCM3 input</li>
+            <li data-i18n-html="projects.telemetry.b2"><b>RTK correction flow</b>: NTRIP connection, periodic GGA injection, RTCM queueing, retry handling, and fallback behavior under poor correction availability</li>
+            <li data-i18n-html="projects.telemetry.b3"><b>Robust field logging</b>: date-foldered drive logs, GPS/IMU merged CSV output, optional raw UBX capture, buffered writes, and post-processing helpers</li>
+            <li data-i18n-html="projects.telemetry.b4"><b>Fault tolerance</b>: serial retry, idle timeout detection, invalid GPS jump/speed filtering, frame/PVT timeout handling, and optional receiver reconfiguration</li>
+            <li data-i18n-html="projects.telemetry.b5"><b>Remote monitoring</b>: Raspberry Pi posts live debug packets to Cloudflare Worker; Durable Object stores latest state and streams updates to browser clients using SSE with Leaflet map visualization</li>
+            <li data-i18n-html="projects.telemetry.b6"><b>Wireless operations</b>: Git/SSH/Tailscale-based update workflow for deploying package changes to the Raspberry Pi</li>
+          </ul>
+
+          <div class="btn-row">
+            <a class="btn" href="/projects/racing-telemetry-stack" data-i18n="common.btn_detailed">Detailed page</a>
+          </div>
+
+          <div class="proof-callout">
+            <b data-i18n="common.result">Result</b>
+            <span data-i18n="projects.telemetry_result">Real-device receiver setup, correction ingestion, buffered logging, browser monitoring, and operational recovery paths.</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-search-item data-tags="analysis matlab telemetry replay segment coaching">
+          <h3 data-i18n-html="projects.gui_title">Racing Analyze GUI <small style="opacity:.7;">(MATLAB · Telemetry Analysis · Driver Coaching)</small></h3>
+
+          <p data-i18n-html="projects.gui_desc">
+            <b>Segment-based racing telemetry analysis workbench</b> for comparing multiple logged runs, visualizing driver/vehicle behavior,
+            and supporting <b>coaching-oriented inspection</b> for circuit driving.
+            Developed and used together with the telemetry collection workflow for <b>Luxon Racing Team</b> in the <b>GTA class of the O-NE SUPERRACE CHAMPIONSHIP</b>.
+          </p>
+
+          <img class="media" src="/assets/images/racing_analyze_gui.png" alt="Racing Analyze GUI">
+
+          <p style="margin-top:.8rem;"><b data-i18n="common.what_i_built">What I built</b></p>
+          <ul>
+            <li data-i18n-html="projects.gui.b0"><b>Fast track/core build</b>: GPS-fix-based <b>track core / segment reference</b> generation for repeated run comparison</li>
+            <li data-i18n-html="projects.gui.b1"><b>Fast multi-log workflow</b>: efficient loading and caching of multiple logged runs, enabling quick switching across segments after a single analysis pass</li>
+            <li data-i18n-html="projects.gui.b2"><b>Segment-wise comparison</b>: gate/segment-based run slicing across <b>All / S0 / S1..Sn / S(n+1)</b> for aligned comparison of the same track region</li>
+            <li data-i18n-html="projects.gui.b3"><b>Interactive replay</b>: time-slider-based replay with <b>play / pause / stop / speed control</b> and pane-aware marker updates</li>
+            <li data-i18n-html="projects.gui.b4"><b>Flexible visualization modes</b>: <b>XY, TS, MAP, POLAR, KDE, GG</b> views for telemetry inspection from multiple perspectives</li>
+            <li data-i18n-html="projects.gui.b5"><b>Sensor-channel flexibility</b>: arbitrary logged channels can be assigned to <b>x / y / color</b>, enabling broad exploratory analysis across vehicle states and driver inputs</li>
+            <li data-i18n-html="projects.gui.b6"><b>Signal conditioning</b>: smoothing and abnormal-data interpolation support for more stable visualization and comparison</li>
+            <li data-i18n-html="projects.gui.b7"><b>Pane-level workflow tools</b>: per-pane rerender and pop-out windows for focused inspection without rebuilding the full workspace</li>
+            <li data-i18n-html="projects.gui.b8"><b>Metrics extraction</b>: segment-level metrics such as <b>segment time</b>, <b>velocity statistics</b>, and <b>acceleration-related indicators</b> for quick run ranking and review</li>
+            <li data-i18n-html="projects.gui.b9"><b>Practical use case</b>: supports <b>visualization assistance</b> and <b>coaching workflow</b> for real racing data analysis</li>
+          </ul>
+
+          <div class="btn-row">
+            <a class="btn" href="/projects/racing-analyze-gui" data-i18n="common.btn_detailed">Detailed page</a>
+          </div>
+
+          <div class="proof-callout">
+            <b data-i18n="common.result">Result</b>
+            <span data-i18n="projects.gui_result">Multi-run telemetry workbench with segment slicing, synchronized replay, flexible plots, and metrics extraction.</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-search-item data-tags="matlab early ev drivetrain">
+          <h3 style="margin-top:.2rem;" data-i18n-html="projects.ev_title">EV Gear Reduction Sizing <small style="opacity:.72;">(early work)</small></h3>
+          <div class="kicker" data-i18n="projects.ev_desc">
+            MATLAB-based drivetrain sizing: datasheet torque–speed modeling + longitudinal acceleration simulation, sweeping gear ratios to minimize run time.
+          </div>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <span data-i18n="common.footer_name">ujinf.net · Ujin Kwon · 권우진</span>
+        <a href="https://github.com/ujinf74">github.com/ujinf74</a>
+      </footer>
+    </div>
+  </body>
+</html>

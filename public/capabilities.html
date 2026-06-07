@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Capabilities · ujinf.net</title>
+    <meta name="description" content="Engineering capabilities across applied algorithms, vehicle integration, field operations, and tool building.">
+    <link rel="canonical" href="https://ujinf.net/capabilities">
+    <script src="/theme-init.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="site-header">
+        <a class="site-title" href="/">ujinf.net</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/capabilities" aria-current="page" data-i18n="common.nav_capabilities">Capabilities</a>
+          <a href="/projects" data-i18n="common.nav_projects">Projects</a>
+          <a href="/about" data-i18n="common.nav_about">About</a>
+          <a href="/contact" data-i18n="common.nav_contact">Contact</a>
+        </nav>
+        <div class="header-tools">
+          <button type="button" id="lang-toggle" class="tool-btn" aria-label="한국어로 보기">한국어</button>
+          <button type="button" id="theme-toggle" class="tool-btn" aria-label="Switch to light theme">◐ Light</button>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <h1 data-i18n="capabilities.h1">Capabilities</h1>
+
+        <div class="project-card">
+          <p class="eyebrow" data-i18n="capabilities.eyebrow">Engineering Focus</p>
+          <p data-i18n="capabilities.intro">
+            The projects below share a practical structure: model the physical or runtime problem, implement the working path,
+            and leave enough logs, metrics, or interfaces to inspect the result.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="capabilities.areas_title">Technical Areas</h3>
+          <div class="mini-grid">
+            <div class="mini-card">
+              <div class="mini-kicker" data-i18n="capabilities.areas.0.k">Applied Algorithms</div>
+              <p data-i18n="capabilities.areas.0.b">Nonlinear solver design, RK4 integration, auxiliary residual construction, damping, convergence handling, and benchmark-minded implementation.</p>
+              <a class="btn" href="/projects/ballistic-solver" data-i18n="capabilities.areas.0.l">Seen in ballistic-solver</a>
+            </div>
+            <div class="mini-card">
+              <div class="mini-kicker" data-i18n="capabilities.areas.1.k">Vehicle Integration</div>
+              <p data-i18n="capabilities.areas.1.b">Bridging FAST-LIO odometry, C++ occupancy-grid mapping, parking planning, delay-aware control, runtime composition, and Ioniq CAN-facing tooling into one validated vehicle system.</p>
+              <a class="btn" href="/projects/mapless-autonomous-parking" data-i18n="capabilities.areas.1.l">Seen in autonomous parking</a>
+            </div>
+            <div class="mini-card">
+              <div class="mini-kicker" data-i18n="capabilities.areas.2.k">Field Operations</div>
+              <p data-i18n="capabilities.areas.2.b">Serial transport, GNSS/RTK correction flow, buffered logging, watchdog-style recovery, and remote visibility under unstable conditions.</p>
+              <a class="btn" href="/projects/racing-telemetry-stack" data-i18n="capabilities.areas.2.l">Seen in telemetry runtime</a>
+            </div>
+            <div class="mini-card">
+              <div class="mini-kicker" data-i18n="capabilities.areas.3.k">Tool Building</div>
+              <p data-i18n="capabilities.areas.3.b">Turning raw operational data into segment-aware analysis, replay, metrics, and inspectable multi-pane workflows.</p>
+              <a class="btn" href="/projects/racing-analyze-gui" data-i18n="capabilities.areas.3.l">Seen in analysis GUI</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="capabilities.matrix_title">Capability Matrix</h3>
+          <table class="result-table">
+            <thead>
+              <tr>
+                <th data-i18n="capabilities.th_cap">Capability</th>
+                <th data-i18n="capabilities.th_what">What Shows It</th>
+                <th data-i18n="capabilities.th_evidence">Main Evidence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="capabilities.m0c">Mathematical modeling</td>
+                <td data-i18n="capabilities.m0w">Turning physical behavior into a solvable computational model and residual formulation</td>
+                <td><a href="/projects/ballistic-solver">ballistic-solver</a></td>
+              </tr>
+              <tr>
+                <td data-i18n="capabilities.m1c">API and deployability</td>
+                <td data-i18n="capabilities.m1w">C ABI, Python package, Unity/C# interoperability, explicit status outputs</td>
+                <td><a href="/projects/ballistic-solver">ballistic-solver</a></td>
+              </tr>
+              <tr>
+                <td data-i18n="capabilities.m2c">ROS 2 / vehicle autonomy integration</td>
+                <td data-i18n="capabilities.m2w">FAST-LIO bridge, C++ pointcloud occupancy grid, planner integration, measured-delay follower, Ioniq CAN path, RViz control</td>
+                <td><a href="/projects/mapless-autonomous-parking">Mapless Autonomous Parking</a></td>
+              </tr>
+              <tr>
+                <td data-i18n="capabilities.m3c">Operational robustness</td>
+                <td data-i18n="capabilities.m3w">NTRIP handling, serial retry, timeout detection, live monitoring, remote deployment workflow</td>
+                <td><a href="/projects/racing-telemetry-stack">Racing Telemetry Stack</a></td>
+              </tr>
+              <tr>
+                <td data-i18n="capabilities.m4c">Data analysis tooling</td>
+                <td data-i18n="capabilities.m4w">Track-core build, segment slicing, synchronized replay, pane-aware visual inspection</td>
+                <td><a href="/projects/racing-analyze-gui">Racing Analyze GUI</a></td>
+              </tr>
+              <tr>
+                <td data-i18n="capabilities.m5c">Cross-domain synthesis</td>
+                <td data-i18n="capabilities.m5w">Collection → monitoring → analysis, or simulation → solver → packaging</td>
+                <td><a href="/projects">Projects overview</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="capabilities.work_title">How I Tend To Work</h3>
+          <ul>
+            <li data-i18n-html="capabilities.work.0"><b>Problem first</b>: I start from the engineering bottleneck before choosing the implementation path.</li>
+            <li data-i18n-html="capabilities.work.1"><b>Runtime matters</b>: implementations should run, fail visibly, recover, and leave inspectable state afterward.</li>
+            <li data-i18n-html="capabilities.work.2"><b>Diagnostics matter</b>: explicit statuses, replayable logs, plots, debug streams, and operational visibility are recurring themes.</li>
+            <li data-i18n-html="capabilities.work.3"><b>Interfaces matter</b>: useful cores are packaged behind APIs, launch files, services, or analysis workflows.</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="capabilities.evidence_title">Evidence Map</h3>
+          <ul>
+            <li data-i18n-html="capabilities.evidence.0"><b>Measured behavior</b>: solver benchmark tables, regression scripts, and paper-level comparison metrics.</li>
+            <li data-i18n-html="capabilities.evidence.1"><b>Runtime integration</b>: odometry alignment, native occupancy-grid updates, delay-aware control, command outputs, and real-vehicle parking validation.</li>
+            <li data-i18n-html="capabilities.evidence.2"><b>Operational tooling</b>: logs, monitoring, replay, and analysis interfaces that make field behavior inspectable.</li>
+          </ul>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <span data-i18n="common.footer_name">ujinf.net · Ujin Kwon · 권우진</span>
+        <a href="https://github.com/ujinf74">github.com/ujinf74</a>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,281 +1,139 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ujinf.net</title>
-    <meta
-      name="description"
-      content="ujinf.net is Ujin's personal web place for robotics, vehicle dynamics, telemetry tools, notes, and public project records."
-    >
+    <title>ujinf.net · Ujin Kwon</title>
+    <meta name="description" content="Applied algorithms, vehicle software, telemetry runtimes, and analysis tools — personal site of Ujin Kwon (권우진).">
     <link rel="canonical" href="https://ujinf.net/">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <script src="/theme-init.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+    <script src="/hero.js" defer></script>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="ujinf.net">
-        <span class="mark">u</span>
-        <span>ujinf.net</span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="#notice">공지사항</a>
-        <a href="#projects">공유게시판</a>
-        <a href="#database">데이터베이스</a>
-        <a href="#board">기록</a>
-        <a href="#elsewhere">외부링크</a>
-      </nav>
-    </header>
+    <div class="page-wrap">
+      <header class="site-header">
+        <a class="site-title" href="/">ujinf.net</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/capabilities" data-i18n="common.nav_capabilities">Capabilities</a>
+          <a href="/projects" data-i18n="common.nav_projects">Projects</a>
+          <a href="/about" data-i18n="common.nav_about">About</a>
+          <a href="/contact" data-i18n="common.nav_contact">Contact</a>
+        </nav>
+        <div class="header-tools">
+          <button type="button" id="lang-toggle" class="tool-btn" aria-label="한국어로 보기">한국어</button>
+          <button type="button" id="theme-toggle" class="tool-btn" aria-label="Switch to light theme">◐ Light</button>
+        </div>
+      </header>
 
-    <main>
-      <section class="hero" id="desk">
-        <div class="hero-main">
-          <p class="kicker">Ujin's Web Place</p>
-          <h1>robotics, dynamics, telemetry.</h1>
-          <p class="lead">
-            기존 포트폴리오의 프로젝트와 자료를 바탕으로 만든 개인 웹사이트입니다.
-            완성된 이력서보다, 다시 찾아볼 수 있는 작업 기록과 공개 자료실에 가깝게 운영합니다.
+      <main class="page-content">
+        <div class="project-card hero-wrap">
+          <canvas id="hero-canvas" aria-hidden="true"></canvas>
+          <span style="font-size:0.95rem; opacity:0.70;">Ujin Kwon · 권우진</span>
+          <p class="eyebrow" style="margin-top:.35rem;" data-i18n="home.hero_tagline">Applied algorithms, vehicle software, telemetry runtimes, and analysis tools</p>
+          <h1 style="margin:.35rem 0 .8rem;"><span id="hero-typed" data-type-en="robotics · dynamics · telemetry" data-type-ko="로보틱스 · 동역학 · 텔레메트리"></span><span class="type-cursor" aria-hidden="true">▋</span></h1>
+
+          <p data-i18n-html="home.hero_intro">
+            Mechanical &amp; Computer Engineering student building <b>nonlinear solvers</b>, <b>real-vehicle autonomy integrations</b>,
+            <b>telemetry runtimes</b>, and <b>analysis workflows</b> for <b>vehicle dynamics</b>, <b>robotics</b>, and <b>autonomous systems</b>.
           </p>
-          <p class="hero-text">
-            관심사는 optimal control, numerical optimization, dynamics, driving intelligence입니다.
-            이곳에는 ballistic-solver, mapless autonomous parking, racing telemetry GUI처럼
-            공개해도 되는 작업과 메모를 게시판처럼 쌓습니다.
+
+          <p style="opacity:.86; margin-top:.25rem;" data-i18n-html="home.hero_interests">
+            Interests: <b>Optimal Control</b> · <b>Numerical Optimization</b> · <b>Dynamics</b> · <b>Vehicle Software</b> · <b>Real-time Systems</b>
           </p>
-          <form class="search" role="search">
-            <label for="site-search">전체검색</label>
-            <input
-              id="site-search"
-              type="search"
-              autocomplete="off"
-              placeholder="ballistic, parking, racing, dynamics..."
-            >
-          </form>
-        </div>
 
-        <figure class="hero-visual">
-          <img src="assets/desk-hero.png" alt="A quiet desk with a laptop, notebook, keyboard, and warm lamp light.">
-          <figcaption>public project desk / private details removed</figcaption>
-        </figure>
-      </section>
-
-      <section class="notice-bar" id="notice" aria-label="Current site note">
-        <span>공지</span>
-        <p>ujinf74.github.io의 내용을 기반으로 옮기는 중입니다. 디자인 방향은 개인 웹플레이스/게시판형 구조를 따릅니다.</p>
-      </section>
-
-      <section class="section profile-strip" aria-label="Site profile">
-        <img src="assets/images/avatar.png" alt="Site avatar from the previous ujinf74.github.io site.">
-        <div>
-          <p class="kicker">About</p>
-          <h2>숫자, 동역학, 제어를 다루는 작업 기록</h2>
-          <p>
-            Mechanical & Computer Engineering 기반의 수치 알고리즘, 제어 시스템,
-            분석 도구 작업을 정리합니다. 로봇, 자율주행, 차량 동역학, 텔레메트리
-            분석처럼 기존 포트폴리오에 있던 주제를 이 사이트의 자료실로 옮깁니다.
-          </p>
-        </div>
-      </section>
-
-      <section class="section" id="projects">
-        <div class="section-head">
-          <p class="kicker">E2 공유게시판</p>
-          <h2>공개 프로젝트</h2>
-        </div>
-        <div class="project-board" data-search-scope>
-          <article class="project-post feature-post" data-search-item>
-            <div class="post-copy">
-              <span>project / C/C++ · Python · Unity</span>
-              <h3>ballistic-solver</h3>
-              <p>
-                moving target을 gravity, quadratic drag, optional wind 조건에서 맞히기 위한
-                simulate-first intercept optimizer입니다. RK4로 비선형 projectile dynamics를
-                적분하고, closest-approach miss residual을 Levenberg-Marquardt로 줄입니다.
-              </p>
-              <ul>
-                <li>fixed-step RK4 with quadratic drag and wind as air velocity</li>
-                <li>damped least-squares, line-search/lambda tries, robust diagnostics</li>
-                <li>stable C ABI, PyPI package, Unity/C# P/Invoke integration</li>
-              </ul>
-              <div class="post-links">
-                <a href="https://github.com/ujinf74/ballistic-solver">Repo</a>
-                <a href="https://pypi.org/project/ballistic-solver/">PyPI</a>
-              </div>
-            </div>
-            <video controls playsinline preload="metadata">
-              <source src="assets/videos/ballistic_demo_low.mp4" type="video/mp4">
-            </video>
-          </article>
-
-          <article class="project-post feature-post" data-search-item>
-            <div class="post-copy">
-              <span>project / Isaac Sim · ROS 2 · Autoware</span>
-              <h3>Mapless Autonomous Parking</h3>
-              <p>
-                prebuilt pointcloud/vector map 없이 online occupancy mapping에서 출발해
-                occupancy-only Hybrid A* replanning과 low-speed tracking을 연결한
-                mapless parking 작업입니다.
-              </p>
-              <ul>
-                <li>Autoware compatibility layer, self-cropping, ground filtering</li>
-                <li>ego-fixed local OGM, global accumulation, stale-cell decay</li>
-                <li>fraction-index interpolation and Stanley-based lateral control</li>
-              </ul>
-            </div>
-            <video controls playsinline preload="metadata">
-              <source src="assets/videos/autopark_demo.mp4" type="video/mp4">
-            </video>
-          </article>
-
-          <article class="project-post feature-post" data-search-item>
-            <div class="post-copy">
-              <span>project / MATLAB · telemetry · driver coaching</span>
-              <h3>Racing Analyze GUI</h3>
-              <p>
-                여러 logged runs를 segment 기준으로 비교하고, driver/vehicle behavior를
-                시각화하는 racing telemetry analysis workbench입니다. real racing data의
-                visualization 및 coaching-oriented inspection workflow를 지원합니다.
-              </p>
-              <ul>
-                <li>GPS-fix-based track core and segment reference generation</li>
-                <li>XY, TS, MAP, POLAR, KDE, GG visualization modes</li>
-                <li>time-slider replay, pane pop-out, segment-level metrics extraction</li>
-              </ul>
-            </div>
-            <img src="assets/images/racing_analyze_gui.png" alt="Racing Analyze GUI screenshot.">
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="database">
-        <div class="section-head">
-          <p class="kicker">공유 데이터베이스</p>
-          <h2>작업 색인</h2>
-        </div>
-        <div class="database-table" data-search-scope>
-          <div class="db-row db-head">
-            <span>분류</span>
-            <span>항목</span>
-            <span>핵심</span>
-          </div>
-          <article class="db-row" data-search-item>
-            <span>solver</span>
-            <strong>ballistic-solver</strong>
-            <p>nonlinear dynamics, RK4, closest-approach residual, LM optimization, ABI/FFI</p>
-          </article>
-          <article class="db-row" data-search-item>
-            <span>autonomy</span>
-            <strong>Mapless Autonomous Parking</strong>
-            <p>occupancy mapping, Hybrid A*, trajectory interpolation, Stanley tracking, ROS 2</p>
-          </article>
-          <article class="db-row" data-search-item>
-            <span>telemetry</span>
-            <strong>Racing Analyze GUI</strong>
-            <p>segment comparison, multi-log replay, visualization modes, coaching workflow</p>
-          </article>
-          <article class="db-row" data-search-item>
-            <span>early work</span>
-            <strong>EV Gear Reduction Sizing</strong>
-            <p>MATLAB drivetrain sizing, torque-speed modeling, gear-ratio sweep, acceleration simulation</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section feature-block">
-        <div class="feature-copy">
-          <p class="kicker">Focus</p>
-          <h2>작업의 공통 축</h2>
-          <p>
-            기존 사이트의 Focus와 Core Strengths를 가져와 사이트의 분류 기준으로 바꿨습니다.
-            단일 포트폴리오 설명보다, 앞으로 게시판과 데이터베이스를 정리할 때 쓰는 태그에 가깝습니다.
-          </p>
-        </div>
-        <div class="feature-list" data-search-scope>
-          <article data-search-item>
-            <span>Numerics</span>
-            <h3>Numerical optimization & solvers</h3>
-            <p>least-squares, damping, ODE/RK4 integration, convergence diagnostics.</p>
-          </article>
-          <article data-search-item>
-            <span>Control</span>
-            <h3>Dynamics-aware planning & control</h3>
-            <p>low-speed vehicle maneuvers, constrained motion, reverse trajectory tracking.</p>
-          </article>
-          <article data-search-item>
-            <span>Telemetry</span>
-            <h3>Driving analysis tools</h3>
-            <p>segment-based comparison, vehicle-state visualization, replay-based inspection.</p>
-          </article>
-          <article data-search-item>
-            <span>Integration</span>
-            <h3>Real-time systems</h3>
-            <p>C/C++, MATLAB, Python, ROS 2, ABI/FFI boundaries, reproducible builds.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section board-preview" id="board">
-        <div>
-          <p class="kicker">기록</p>
-          <h2>작게 쓰는 게시판</h2>
-          <p>
-            이 영역은 Cloudflare Pages Functions와 D1이 연결되면 실제로 읽고 쓰는 게시판이 됩니다.
-            초기 항목은 기존 사이트의 프로젝트와 메모를 바탕으로 채웁니다.
-          </p>
-        </div>
-        <div class="board-panel">
-          <form class="entry-form" id="entry-form">
-            <label>
-              <span>분류</span>
-              <select name="kind">
-                <option value="note">note</option>
-                <option value="site">site</option>
-                <option value="project">project</option>
-                <option value="archive">archive</option>
-              </select>
-            </label>
-            <label>
-              <span>제목</span>
-              <input name="title" maxlength="80" required placeholder="짧은 제목">
-            </label>
-            <label class="full">
-              <span>내용</span>
-              <textarea name="body" maxlength="700" required placeholder="남길 내용"></textarea>
-            </label>
-            <input class="honeypot" name="website" tabindex="-1" autocomplete="off">
-            <button type="submit">남기기</button>
-            <p class="form-status" id="entry-status" role="status"></p>
-          </form>
-          <div class="entry-list" id="entry-list" data-search-scope>
-            <article class="entry is-loading">
-              <span>loading</span>
-              <h3>항목을 불러오는 중</h3>
-              <p>Cloudflare Functions API와 연결되면 여기에 글이 표시됩니다.</p>
-            </article>
+          <div class="btn-row">
+            <a class="btn" href="/capabilities" data-i18n="home.btn_capability">Read by capability</a>
+            <a class="btn" href="/projects" data-i18n="home.btn_projects">Browse projects</a>
           </div>
         </div>
-      </section>
 
-      <section class="section elsewhere" id="elsewhere">
-        <div>
-          <p class="kicker">외부링크</p>
-          <h2>기존 사이트와 연결</h2>
-          <p>
-            `ujinf74.github.io`는 기존 포트폴리오 아카이브로 남기고, 이 사이트는
-            상호작용 가능한 개인 웹플레이스로 확장합니다.
+        <div class="project-card">
+          <h3 data-i18n="story.title">Origin — why I build this way</h3>
+          <p data-i18n-html="story.p1">
+            My physics intuition started in games. In <b>Garry's Mod</b> I wired vehicle dynamics with <b>E2 / Wiremod</b> —
+            coding forces, integration, and control loops instead of just playing them.
+          </p>
+          <p data-i18n-html="story.p2">
+            That habit of <b>making systems instead of using them</b> runs straight through <b>ballistic-solver</b> (nonlinear
+            trajectory solving) and <b>real-vehicle autonomous parking</b>. The tools changed; the impulse to model and control
+            the physics didn't.
           </p>
         </div>
-        <div class="pill-row">
-          <a href="https://github.com/ujinf74">github.com/ujinf74</a>
-          <a href="https://ujinf74.github.io">ujinf74.github.io</a>
-          <a href="https://github.com/ujinf74/ballistic-solver">ballistic-solver</a>
-          <a href="mailto:ujin@tukorea.ac.kr">email</a>
-        </div>
-      </section>
-    </main>
 
-    <footer class="site-footer">
-      <span>ujinf.net</span>
-      <a href="#desk">top</a>
-    </footer>
+        <div class="project-card">
+          <h3 data-i18n="home.selected_work_title">Selected Work</h3>
+          <ul>
+            <li data-i18n-html="home.selected_work.0"><b>ballistic-solver</b>: C++/Python intercept solver with drag dynamics, auxiliary residual correction, benchmarks, and an ICROS 2026 manuscript.</li>
+            <li data-i18n-html="home.selected_work.1"><b>Mapless Autonomous Parking</b>: Hyundai Ioniq parking system using FAST-LIO odometry, C++ LiDAR occupancy-grid mapping, delay-aware trajectory following, and CAN-facing control.</li>
+            <li data-i18n-html="home.selected_work.2"><b>Racing Telemetry Stack</b>: Raspberry Pi GNSS/RTK runtime with receiver configuration, buffered logging, remote monitoring, and recovery handling.</li>
+            <li data-i18n-html="home.selected_work.3"><b>Racing Analyze GUI</b>: MATLAB telemetry workbench for multi-run loading, segment comparison, replay, and metrics extraction.</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="home.focus_title">Focus</h3>
+          <div class="mini-grid">
+            <div class="mini-card">
+              <div class="mini-kicker" data-i18n="home.focus.0.k">Applied Algorithms</div>
+              <p data-i18n="home.focus.0.b">Nonlinear dynamics, residual transformation, damping, convergence handling, and explicit failure states.</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-kicker" data-i18n="home.focus.1.k">Vehicle Autonomy</div>
+              <p data-i18n="home.focus.1.b">FAST-LIO odometry, C++ occupancy-grid mapping, response-delay-aware tracking, reverse-capable execution, and Ioniq CAN command integration.</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-kicker" data-i18n="home.focus.2.k">Telemetry Operations</div>
+              <p data-i18n="home.focus.2.b">GNSS/RTK collection, browser monitoring, logging pipelines, and track-side recovery under imperfect conditions.</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-kicker" data-i18n="home.focus.3.k">Analysis Workflows</div>
+              <p data-i18n="home.focus.3.b">Replay, segment metrics, multi-run comparison, and domain-specific inspection tools for driver review.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="home.highlights_title">Project Highlights</h3>
+          <div class="mini-grid">
+            <div class="mini-card">
+              <div class="mini-kicker" data-i18n="home.highlights.0.k">Deployable Numerics</div>
+              <p data-i18n-html="home.highlights.0.b"><b>ballistic-solver</b> shows a paper-backed residual method, solver design, API boundaries, packaging, diagnostics, and benchmark numbers.</p>
+              <a class="btn" href="/projects/ballistic-solver" data-i18n="common.btn_view">View details</a>
+            </div>
+            <div class="mini-card">
+              <div class="mini-kicker" data-i18n="home.highlights.1.k">Planning + Integration</div>
+              <p data-i18n-html="home.highlights.1.b"><b>Mapless Autonomous Parking</b> shows real-vehicle Ioniq validation, ROS 2/Autoware integration, native occupancy mapping, measured-delay control, and CAN-facing execution.</p>
+              <a class="btn" href="/projects/mapless-autonomous-parking" data-i18n="common.btn_view">View details</a>
+            </div>
+            <div class="mini-card">
+              <div class="mini-kicker" data-i18n="home.highlights.2.k">Field Runtime</div>
+              <p data-i18n-html="home.highlights.2.b"><b>Racing Telemetry Stack</b> shows real-device handling, correction ingestion, fault tolerance, browser monitoring, and operational data flow design.</p>
+              <a class="btn" href="/projects/racing-telemetry-stack" data-i18n="common.btn_view">View details</a>
+            </div>
+            <div class="mini-card">
+              <div class="mini-kicker" data-i18n="home.highlights.3.k">Analysis Workflow</div>
+              <p data-i18n-html="home.highlights.3.b"><b>Racing Analyze GUI</b> provides a stateful analysis interface with replay, segment metrics, and pane-based telemetry inspection.</p>
+              <a class="btn" href="/projects/racing-analyze-gui" data-i18n="common.btn_view">View details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 data-i18n="home.awards_title">Highlights</h3>
+          <ul>
+            <li data-i18n-html="home.awards.0"><b>Award</b>: KSAE 2024 Smart e-Mobility Competition (EV Division) — Encouragement Prize.</li>
+            <li data-i18n-html="home.awards.1"><b>Research</b>: autonomous driving team lead at HuVILab, a university vehicle-intelligence lab, focused on real-vehicle mapless parking, planning/control under constraints, and coaching systems.</li>
+            <li data-i18n-html="home.awards.2"><b>Operations</b>: telemetry runtime / monitoring / analysis collaboration with Luxon Racing Team in the GTA class of the O-NE SUPERRACE CHAMPIONSHIP.</li>
+          </ul>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <span data-i18n="common.footer_name">ujinf.net · Ujin Kwon · 권우진</span>
+        <a href="https://github.com/ujinf74">github.com/ujinf74</a>
+      </footer>
+    </div>
   </body>
 </html>

@@ -3,3 +3,4 @@ node_modules/
 .tmp/
 .dev.vars
 dist/
+.claude/
