@@ -308,6 +308,8 @@ body::after{
 }
 
 .mini-card{
+  display:flex;
+  flex-direction:column;
   padding:1rem;
   border:1px solid rgba(116,154,255,.18);
   border-radius:var(--r);
@@ -317,7 +319,13 @@ body::after{
 }
 
 .mini-card p{
+  flex:1 0 auto;
   margin:.42rem 0 .85rem;
+}
+
+.mini-card .btn{
+  align-self:flex-start;
+  margin-top:auto;
 }
 
 .mini-kicker{
@@ -862,4 +870,62 @@ body,
 
 @media (max-width:720px){
   .header-tools{ order:3; }
+}
+
+/* ----------------------------------------------- hero split + photos */
+.hero-split{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:1.3rem;
+  align-items:center;
+}
+.hero-split > .hero-copy{ min-width:0; }
+
+.hero-photo{
+  width:100%;
+  height:auto;
+  max-height:360px;
+  display:block;
+  border-radius:var(--r);
+  border:1px solid var(--border-soft);
+  box-shadow:var(--shadow1);
+  object-fit:cover;
+}
+
+.about-photo{
+  width:clamp(120px, 24%, 200px);
+  height:auto;
+  display:block;
+  float:right;
+  margin:.1rem 0 .7rem 1.1rem;
+  border-radius:var(--r);
+  border:1px solid var(--border-soft);
+  box-shadow:var(--shadow2);
+}
+
+@media (max-width:720px){
+  .hero-split{ grid-template-columns:1fr; }
+  .about-photo{ float:none; width:62%; margin:.1rem 0 .9rem 0; }
+}
+
+/* section-title accent bar — adds rhythm + secondary color across sections */
+.page-content > .project-card > h3:first-child{
+  position:relative;
+  padding-left:.75rem;
+}
+.page-content > .project-card > h3:first-child::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.18em;
+  bottom:.18em;
+  width:3px;
+  border-radius:2px;
+  background:linear-gradient(var(--accent), var(--accent-3));
+}
+
+/* hero headline sized to keep the typed line on one row (desktop) */
+.hero-copy h1{
+  font-size:26px;
+  line-height:1.3;
 }

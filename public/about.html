@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>About · ujinf.net</title>
-    <meta name="description" content="Ujin Kwon (권우진) — Mechanical & Computer Engineering student in optimal control, numerical optimization, and dynamics.">
+    <meta name="description" content="I'm Ujin Kwon (권우진). I make systems and poke at them until they tell me something true.">
     <link rel="canonical" href="https://ujinf.net/about">
     <script src="/theme-init.js"></script>
     <link rel="stylesheet" href="/styles.css">
@@ -15,10 +15,9 @@
       <header class="site-header">
         <a class="site-title" href="/">ujinf.net</a>
         <nav class="site-nav" aria-label="Primary">
-          <a href="/capabilities" data-i18n="common.nav_capabilities">Capabilities</a>
-          <a href="/projects" data-i18n="common.nav_projects">Projects</a>
+          <a href="/projects" data-i18n="common.nav_projects">Work</a>
           <a href="/about" aria-current="page" data-i18n="common.nav_about">About</a>
-          <a href="/contact" data-i18n="common.nav_contact">Contact</a>
+          <a href="/now" data-i18n="common.nav_now">Now</a>
         </nav>
         <div class="header-tools">
           <button type="button" id="lang-toggle" class="tool-btn" aria-label="한국어로 보기">한국어</button>
@@ -30,11 +29,17 @@
         <h1 data-i18n="about.h1">About</h1>
 
         <div class="project-card">
+          <picture>
+            <source srcset="/assets/images/me.webp" type="image/webp">
+            <img class="about-photo" src="/assets/images/me.jpg" alt="Ujin — mirror selfie, black knit, glasses" decoding="async">
+          </picture>
           <span style="font-size:0.95rem; opacity:0.70;">Ujin Kwon · 권우진</span>
-          <p style="margin-top:.45rem;" data-i18n-html="about.intro">
-            I am a Mechanical &amp; Computer Engineering student focused on <b>optimal control</b>, <b>numerical optimization</b>, and <b>dynamics</b>,
-            building <b>nonlinear solvers</b>, <b>real-vehicle autonomy integrations</b>, <b>telemetry software</b>, and <b>analysis tools</b>
-            for robotics, autonomous systems, and vehicle dynamics.
+          <p style="margin-top:.45rem;" data-i18n-html="about.manifesto">
+            I'm Ujin. I make systems — and then I poke at them until they tell me something true.
+            Games, solvers, vehicles, this site: all the same instinct.
+          </p>
+          <p style="opacity:.82;" data-i18n="about.lead">
+            Mechanical &amp; Computer engineering — control, numerics, and vehicle autonomy.
           </p>
         </div>
 
@@ -52,83 +57,34 @@
             <div class="flow-arrow">→</div>
             <div class="flow-step"><b data-i18n="story.t3_h">Real-vehicle autonomy</b><span data-i18n="story.t3_s">mapless parking on a Hyundai Ioniq</span></div>
           </div>
-        </div>
-
-        <div class="project-card">
-          <h3 data-i18n="about.current_title">Current Work</h3>
-          <p data-i18n="about.current_body">
-            Recent work includes a Hyundai Ioniq mapless parking system, a C++/Python ballistic interception solver,
-            and RTK/GNSS telemetry collection and analysis tools for racing data.
+          <p style="margin-top:.95rem;" data-i18n-html="story.games_detail">
+            Most of what I do now, I first built in a game. In <b>Garry's Mod</b> I wrote a ballistic interception optimizer,
+            a full vehicle-dynamics engine, active suspension, even a helicopter flight model and a lap-timing rig —
+            the same problems I work on today, years earlier.
           </p>
         </div>
 
         <div class="project-card">
-          <h3 data-i18n="about.research_title">Research Experience</h3>
+          <h3 data-i18n="about.history_title">What I'm doing</h3>
           <ul>
-            <li data-i18n-html="about.research_0">
-              <b>Undergraduate Research Intern / Autonomous Driving Team Lead, HuVILab</b>
-              <small style="opacity:.7;">(Tech University of Korea / 한국공학대학교)</small><br>
-              <b>(2026–Present)</b><br>
-              Focus: <b>real-vehicle mapless autonomous reverse parking</b>, <b>planning/control under constraints</b>, and <b>driving coaching systems</b>
-              based on trajectory analysis and feedback generation.
-            </li>
+            <li data-i18n-html="about.hist.0"><b>Autonomous Driving Team Lead, HuVILab</b> (2026–present) — real-vehicle mapless parking, planning, and control.</li>
+            <li data-i18n-html="about.hist.1"><b>Racing telemetry + analysis, Luxon Racing</b> — GT-A class, O-NE SUPERRACE CHAMPIONSHIP.</li>
+            <li data-i18n-html="about.hist.2"><b>KSAE 2024 Smart e-Mobility (EV)</b> — Encouragement Prize.</li>
           </ul>
         </div>
 
         <div class="project-card">
-          <h3 data-i18n="about.eng_title">Engineering Experience</h3>
-          <ul>
-            <li data-i18n-html="about.eng_0">
-              <b>Racing telemetry runtime / monitoring / analysis collaboration with Luxon Racing Team</b><br>
-              Built a <b>Raspberry Pi telemetry runtime</b> around a <b>u-blox ZED-F9R GPS/IMU receiver</b> with startup configuration,
-              RTK/NTRIP correction input, buffered CSV/UBX logging, and operational monitoring for field use.
-            </li>
-            <li data-i18n-html="about.eng_1">
-              Extended the same workflow with a <b>browser-based remote monitoring path</b> and a <b>segment-based telemetry analysis GUI</b> for
-              <b>visualization</b> and <b>coaching-oriented run inspection</b> in the <b>GTA class of the O-NE SUPERRACE CHAMPIONSHIP</b>.
-            </li>
-          </ul>
-        </div>
-
-        <div class="project-card">
-          <h3 data-i18n="about.areas_title">Technical Areas</h3>
-          <ul>
-            <li data-i18n-html="about.areas.0"><b>Vehicle autonomy</b>: ROS 2, FAST-LIO odometry, C++ occupancy-grid parking, delay-aware tracking, and CAN-facing command paths.</li>
-            <li data-i18n-html="about.areas.1"><b>Numerical methods</b>: RK4 integration, auxiliary residual design, damping, convergence handling, and solver diagnostics.</li>
-            <li data-i18n-html="about.areas.2"><b>Telemetry systems</b>: GNSS/RTK collection, logging, monitoring, replay, and analysis loops tied to real operations.</li>
-            <li data-i18n-html="about.areas.3"><b>Interfaces</b>: C ABI boundaries, Python bindings, launch files, dashboards, and user-facing analysis tools.</li>
-          </ul>
-        </div>
-
-        <div class="project-card">
-          <h3 data-i18n="about.strengths_title">Technical Strengths</h3>
-          <ul>
-            <li data-i18n-html="about.strengths.0"><b>Dynamics and numerics</b>: RK4 integration, auxiliary residual design, damping, convergence handling, and solver-facing diagnostics.</li>
-            <li data-i18n-html="about.strengths.1"><b>Systems integration</b>: ROS 2 messages, timing/TF alignment, runtime composition, Autoware-compatible command paths, CAN-facing vehicle interfaces, and multi-stage engineering flows.</li>
-            <li data-i18n-html="about.strengths.2"><b>Telemetry and field tooling</b>: GNSS/RTK collection, logging, monitoring, replay, and analysis loops tied to real operations.</li>
-            <li data-i18n-html="about.strengths.3"><b>Packaging and interfaces</b>: C ABI boundaries, Python bindings, deployable runtime configuration, and user-facing analysis tools.</li>
-          </ul>
-        </div>
-
-        <div class="project-card">
-          <h3 data-i18n="about.leadership_title">Leadership</h3>
-          <ul>
-            <li data-i18n-html="about.leadership.0"><b>Autonomous Driving Team Lead</b>, HuVILab undergraduate research team — technical direction, integration planning, and project coordination.</li>
-            <li data-i18n-html="about.leadership.1"><b>President</b>, 50-member fashion club — member operations, event planning, and team coordination outside an engineering context.</li>
-          </ul>
-        </div>
-
-        <div class="project-card">
-          <h3 data-i18n="about.awards_title">Awards</h3>
-          <ul>
-            <li data-i18n-html="about.awards_0"><b>KSAE 2024 Smart e-Mobility Competition (EV Division)</b> — Encouragement Prize (Honorable Mention)</li>
-          </ul>
+          <h3 data-i18n="about.contact_title">Reach me</h3>
+          <p data-i18n-html="about.contact">
+            Email <a href="mailto:ujin@tukorea.ac.kr">ujin@tukorea.ac.kr</a> · GitHub <a href="https://github.com/ujinf74">github.com/ujinf74</a> ·
+            Portfolio <a href="https://ujinf74.github.io">ujinf74.github.io</a>
+          </p>
         </div>
       </main>
 
       <footer class="site-footer">
         <span data-i18n="common.footer_name">ujinf.net · Ujin Kwon · 권우진</span>
-        <a href="https://github.com/ujinf74">github.com/ujinf74</a>
+        <span><a href="mailto:ujin@tukorea.ac.kr">email</a> · <a href="https://github.com/ujinf74">github</a></span>
       </footer>
     </div>
   </body>

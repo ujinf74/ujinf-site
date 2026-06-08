@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ujinf.net · Ujin Kwon</title>
-    <meta name="description" content="Applied algorithms, vehicle software, telemetry runtimes, and analysis tools — personal site of Ujin Kwon (권우진).">
+    <meta name="description" content="Ujin Kwon (권우진) — I build systems: solvers, simulations, real-vehicle autonomy, telemetry. This is my sandbox.">
     <link rel="canonical" href="https://ujinf.net/">
     <script src="/theme-init.js"></script>
     <link rel="stylesheet" href="/styles.css">
@@ -16,10 +16,9 @@
       <header class="site-header">
         <a class="site-title" href="/">ujinf.net</a>
         <nav class="site-nav" aria-label="Primary">
-          <a href="/capabilities" data-i18n="common.nav_capabilities">Capabilities</a>
-          <a href="/projects" data-i18n="common.nav_projects">Projects</a>
+          <a href="/projects" data-i18n="common.nav_projects">Work</a>
           <a href="/about" data-i18n="common.nav_about">About</a>
-          <a href="/contact" data-i18n="common.nav_contact">Contact</a>
+          <a href="/now" data-i18n="common.nav_now">Now</a>
         </nav>
         <div class="header-tools">
           <button type="button" id="lang-toggle" class="tool-btn" aria-label="한국어로 보기">한국어</button>
@@ -30,22 +29,25 @@
       <main class="page-content">
         <div class="project-card hero-wrap">
           <canvas id="hero-canvas" aria-hidden="true"></canvas>
-          <span style="font-size:0.95rem; opacity:0.70;">Ujin Kwon · 권우진</span>
-          <p class="eyebrow" style="margin-top:.35rem;" data-i18n="home.hero_tagline">Applied algorithms, vehicle software, telemetry runtimes, and analysis tools</p>
-          <h1 style="margin:.35rem 0 .8rem;"><span id="hero-typed" data-type-en="robotics · dynamics · telemetry" data-type-ko="로보틱스 · 동역학 · 텔레메트리"></span><span class="type-cursor" aria-hidden="true">▋</span></h1>
-
-          <p data-i18n-html="home.hero_intro">
-            Mechanical &amp; Computer Engineering student building <b>nonlinear solvers</b>, <b>real-vehicle autonomy integrations</b>,
-            <b>telemetry runtimes</b>, and <b>analysis workflows</b> for <b>vehicle dynamics</b>, <b>robotics</b>, and <b>autonomous systems</b>.
-          </p>
-
-          <p style="opacity:.86; margin-top:.25rem;" data-i18n-html="home.hero_interests">
-            Interests: <b>Optimal Control</b> · <b>Numerical Optimization</b> · <b>Dynamics</b> · <b>Vehicle Software</b> · <b>Real-time Systems</b>
-          </p>
-
-          <div class="btn-row">
-            <a class="btn" href="/capabilities" data-i18n="home.btn_capability">Read by capability</a>
-            <a class="btn" href="/projects" data-i18n="home.btn_projects">Browse projects</a>
+          <div class="hero-split">
+            <div class="hero-copy">
+              <span style="font-size:0.95rem; opacity:0.70;">Ujin Kwon · 권우진</span>
+              <h1 style="margin:.4rem 0 .7rem;"><span id="hero-typed" data-type-en="systems · simulations · vehicles" data-type-ko="시스템 · 시뮬레이션 · 차량"></span><span class="type-cursor" aria-hidden="true">▋</span></h1>
+              <p data-i18n-html="home.manifesto">
+                I build systems — <b>code, games, simulations, vehicles</b>. Anywhere I can change a variable and watch what breaks.
+              </p>
+              <p style="opacity:.82;" data-i18n="home.manifesto2">
+                When meaning runs thin, I build something real.
+              </p>
+              <div class="btn-row">
+                <a class="btn" href="/projects" data-i18n="home.btn_work">View the work →</a>
+                <a class="btn" href="/now" data-i18n="home.btn_now">What I'm on now →</a>
+              </div>
+            </div>
+            <picture>
+              <source srcset="/assets/images/rviz-hero.webp" type="image/webp">
+              <img class="hero-photo" src="/assets/images/rviz-hero.jpg" alt="Me caught on an RViz2 camera feed, throwing a V next to my own autonomy rig" decoding="async">
+            </picture>
           </div>
         </div>
 
@@ -63,76 +65,43 @@
         </div>
 
         <div class="project-card">
-          <h3 data-i18n="home.selected_work_title">Selected Work</h3>
-          <ul>
-            <li data-i18n-html="home.selected_work.0"><b>ballistic-solver</b>: C++/Python intercept solver with drag dynamics, auxiliary residual correction, benchmarks, and an ICROS 2026 manuscript.</li>
-            <li data-i18n-html="home.selected_work.1"><b>Mapless Autonomous Parking</b>: Hyundai Ioniq parking system using FAST-LIO odometry, C++ LiDAR occupancy-grid mapping, delay-aware trajectory following, and CAN-facing control.</li>
-            <li data-i18n-html="home.selected_work.2"><b>Racing Telemetry Stack</b>: Raspberry Pi GNSS/RTK runtime with receiver configuration, buffered logging, remote monitoring, and recovery handling.</li>
-            <li data-i18n-html="home.selected_work.3"><b>Racing Analyze GUI</b>: MATLAB telemetry workbench for multi-run loading, segment comparison, replay, and metrics extraction.</li>
-          </ul>
-        </div>
-
-        <div class="project-card">
-          <h3 data-i18n="home.focus_title">Focus</h3>
+          <h3 data-i18n="home.work_title">The work</h3>
           <div class="mini-grid">
             <div class="mini-card">
-              <div class="mini-kicker" data-i18n="home.focus.0.k">Applied Algorithms</div>
-              <p data-i18n="home.focus.0.b">Nonlinear dynamics, residual transformation, damping, convergence handling, and explicit failure states.</p>
+              <div class="mini-kicker">ballistic-solver</div>
+              <p data-i18n="home.work.0">A nonlinear intercept solver with a paper-backed residual method. Sub-0.2 ms solves, ICROS 2026.</p>
+              <a class="btn" href="/projects/ballistic-solver" data-i18n="common.btn_view">View →</a>
             </div>
             <div class="mini-card">
-              <div class="mini-kicker" data-i18n="home.focus.1.k">Vehicle Autonomy</div>
-              <p data-i18n="home.focus.1.b">FAST-LIO odometry, C++ occupancy-grid mapping, response-delay-aware tracking, reverse-capable execution, and Ioniq CAN command integration.</p>
+              <div class="mini-kicker">Mapless Autonomous Parking</div>
+              <p data-i18n="home.work.1">Mapless self-parking on a real Hyundai Ioniq — no prebuilt map, just LiDAR, odometry, and control.</p>
+              <a class="btn" href="https://ujinf74.github.io/projects/mapless-autonomous-parking/" data-i18n="common.btn_writeup">Full writeup ↗</a>
             </div>
             <div class="mini-card">
-              <div class="mini-kicker" data-i18n="home.focus.2.k">Telemetry Operations</div>
-              <p data-i18n="home.focus.2.b">GNSS/RTK collection, browser monitoring, logging pipelines, and track-side recovery under imperfect conditions.</p>
+              <div class="mini-kicker">Racing Telemetry Stack</div>
+              <p data-i18n="home.work.2">A Raspberry Pi telemetry box that survives a live race weekend: RTK GPS, buffered logs, live remote view.</p>
+              <a class="btn" href="https://ujinf74.github.io/projects/racing-telemetry-stack/" data-i18n="common.btn_writeup">Full writeup ↗</a>
             </div>
             <div class="mini-card">
-              <div class="mini-kicker" data-i18n="home.focus.3.k">Analysis Workflows</div>
-              <p data-i18n="home.focus.3.b">Replay, segment metrics, multi-run comparison, and domain-specific inspection tools for driver review.</p>
+              <div class="mini-kicker">Racing Analyze GUI</div>
+              <p data-i18n="home.work.3">A MATLAB workbench that turns race logs into segment-by-segment driver coaching.</p>
+              <a class="btn" href="https://ujinf74.github.io/projects/racing-analyze-gui/" data-i18n="common.btn_writeup">Full writeup ↗</a>
             </div>
           </div>
         </div>
 
         <div class="project-card">
-          <h3 data-i18n="home.highlights_title">Project Highlights</h3>
-          <div class="mini-grid">
-            <div class="mini-card">
-              <div class="mini-kicker" data-i18n="home.highlights.0.k">Deployable Numerics</div>
-              <p data-i18n-html="home.highlights.0.b"><b>ballistic-solver</b> shows a paper-backed residual method, solver design, API boundaries, packaging, diagnostics, and benchmark numbers.</p>
-              <a class="btn" href="/projects/ballistic-solver" data-i18n="common.btn_view">View details</a>
-            </div>
-            <div class="mini-card">
-              <div class="mini-kicker" data-i18n="home.highlights.1.k">Planning + Integration</div>
-              <p data-i18n-html="home.highlights.1.b"><b>Mapless Autonomous Parking</b> shows real-vehicle Ioniq validation, ROS 2/Autoware integration, native occupancy mapping, measured-delay control, and CAN-facing execution.</p>
-              <a class="btn" href="/projects/mapless-autonomous-parking" data-i18n="common.btn_view">View details</a>
-            </div>
-            <div class="mini-card">
-              <div class="mini-kicker" data-i18n="home.highlights.2.k">Field Runtime</div>
-              <p data-i18n-html="home.highlights.2.b"><b>Racing Telemetry Stack</b> shows real-device handling, correction ingestion, fault tolerance, browser monitoring, and operational data flow design.</p>
-              <a class="btn" href="/projects/racing-telemetry-stack" data-i18n="common.btn_view">View details</a>
-            </div>
-            <div class="mini-card">
-              <div class="mini-kicker" data-i18n="home.highlights.3.k">Analysis Workflow</div>
-              <p data-i18n-html="home.highlights.3.b"><b>Racing Analyze GUI</b> provides a stateful analysis interface with replay, segment metrics, and pane-based telemetry inspection.</p>
-              <a class="btn" href="/projects/racing-analyze-gui" data-i18n="common.btn_view">View details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3 data-i18n="home.awards_title">Highlights</h3>
-          <ul>
-            <li data-i18n-html="home.awards.0"><b>Award</b>: KSAE 2024 Smart e-Mobility Competition (EV Division) — Encouragement Prize.</li>
-            <li data-i18n-html="home.awards.1"><b>Research</b>: autonomous driving team lead at HuVILab, a university vehicle-intelligence lab, focused on real-vehicle mapless parking, planning/control under constraints, and coaching systems.</li>
-            <li data-i18n-html="home.awards.2"><b>Operations</b>: telemetry runtime / monitoring / analysis collaboration with Luxon Racing Team in the GTA class of the O-NE SUPERRACE CHAMPIONSHIP.</li>
-          </ul>
+          <h3 data-i18n="home.now_title">Right now</h3>
+          <p data-i18n="home.now_summary">
+            Keeping ballistic-solver alive, leading autonomous driving at HuVILab, and building this playground.
+          </p>
+          <a class="btn" href="/now" data-i18n="home.btn_now2">What I'm on →</a>
         </div>
       </main>
 
       <footer class="site-footer">
         <span data-i18n="common.footer_name">ujinf.net · Ujin Kwon · 권우진</span>
-        <a href="https://github.com/ujinf74">github.com/ujinf74</a>
+        <span><a href="mailto:ujin@tukorea.ac.kr">email</a> · <a href="https://github.com/ujinf74">github</a></span>
       </footer>
     </div>
   </body>
