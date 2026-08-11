@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ujinf.net · Ujin Kwon</title>
-    <meta name="description" content="Ujin Kwon (권우진) — I build systems: solvers, simulations, real-vehicle autonomy, telemetry. This is my sandbox.">
+    <meta name="description" content="Ujin Kwon (권우진) — engineering student working on solvers, vehicle autonomy, vision, and telemetry systems.">
     <link rel="canonical" href="https://ujinf.net/">
     <script src="/theme-init.js"></script>
     <link rel="stylesheet" href="/styles.css">
@@ -34,10 +34,10 @@
               <span style="font-size:0.95rem; opacity:0.70;">Ujin Kwon · 권우진</span>
               <h1 style="margin:.4rem 0 .7rem;"><span id="hero-typed" data-type-en="systems · simulations · vehicles" data-type-ko="시스템 · 시뮬레이션 · 차량"></span><span class="type-cursor" aria-hidden="true">▋</span></h1>
               <p data-i18n-html="home.manifesto">
-                I build systems — <b>code, games, simulations, vehicles</b>. Anywhere I can change a variable and watch what breaks.
+                I build systems — <b>code, games, simulations, vehicles</b>. I'd rather build something than just use it.
               </p>
               <p style="opacity:.82;" data-i18n="home.manifesto2">
-                When meaning runs thin, I build something real.
+                Building it is usually how I end up understanding it.
               </p>
               <div class="btn-row">
                 <a class="btn" href="/projects" data-i18n="home.btn_work">View the work →</a>
@@ -52,40 +52,49 @@
         </div>
 
         <div class="project-card">
-          <h3 data-i18n="story.title">Origin — why I build this way</h3>
+          <h3 data-i18n="story.title">Background</h3>
           <p data-i18n-html="story.p1">
-            My physics intuition started in games. In <b>Garry's Mod</b> I wired vehicle dynamics with <b>E2 / Wiremod</b> —
-            coding forces, integration, and control loops instead of just playing them.
+            I started programming physics and control systems in <b>Garry's Mod</b>, using <b>E2 / Wiremod</b>
+            to build vehicle dynamics, suspension, and telemetry.
           </p>
           <p data-i18n-html="story.p2">
-            That habit of <b>making systems instead of using them</b> runs straight through <b>ballistic-solver</b> (nonlinear
-            trajectory solving) and <b>real-vehicle autonomous parking</b>. The tools changed; the impulse to model and control
-            the physics didn't.
+            That experience led to the same kinds of problems in standalone software:
+            <b>trajectory solvers</b>, <b>vehicle autonomy</b>, and tools for collecting and examining real data.
           </p>
         </div>
 
         <div class="project-card">
-          <h3 data-i18n="home.work_title">The work</h3>
+          <h3 data-i18n="home.work_title">What I work on</h3>
           <div class="mini-grid">
             <div class="mini-card">
               <div class="mini-kicker">ballistic-solver</div>
-              <p data-i18n="home.work.0">A nonlinear intercept solver with a paper-backed residual method. Sub-0.2 ms solves, ICROS 2026.</p>
+              <p data-i18n="home.work.0">A native intercept solver for moving targets under gravity, drag, and wind, with Python and game-engine bindings.</p>
               <a class="btn" href="/projects/ballistic-solver" data-i18n="common.btn_view">View →</a>
             </div>
             <div class="mini-card">
               <div class="mini-kicker">Mapless Autonomous Parking</div>
-              <p data-i18n="home.work.1">Mapless self-parking on a real Hyundai Ioniq — no prebuilt map, just LiDAR, odometry, and control.</p>
+              <p data-i18n="home.work.1">Mapless parking on a Hyundai Ioniq using LiDAR-inertial odometry, occupancy mapping, planning, and vehicle control.</p>
               <a class="btn" href="https://ujinf74.github.io/projects/mapless-autonomous-parking/" data-i18n="common.btn_writeup">Full writeup ↗</a>
             </div>
             <div class="mini-card">
               <div class="mini-kicker">Racing Telemetry Stack</div>
-              <p data-i18n="home.work.2">A Raspberry Pi telemetry box that survives a live race weekend: RTK GPS, buffered logs, live remote view.</p>
+              <p data-i18n="home.work.2">A Raspberry Pi runtime for RTK/GNSS collection, buffered logging, remote monitoring, and field recovery.</p>
               <a class="btn" href="https://ujinf74.github.io/projects/racing-telemetry-stack/" data-i18n="common.btn_writeup">Full writeup ↗</a>
             </div>
             <div class="mini-card">
               <div class="mini-kicker">Racing Analyze GUI</div>
-              <p data-i18n="home.work.3">A MATLAB workbench that turns race logs into segment-by-segment driver coaching.</p>
+              <p data-i18n="home.work.3">A MATLAB workbench for segment comparison, synchronized replay, and racing telemetry review.</p>
               <a class="btn" href="https://ujinf74.github.io/projects/racing-analyze-gui/" data-i18n="common.btn_writeup">Full writeup ↗</a>
+            </div>
+            <div class="mini-card">
+              <div class="mini-kicker">HERO <small style="opacity:.7;">(In development)</small></div>
+              <p data-i18n="home.work.4">Vision-only parking perception and a low-vision driver coaching interface, developed in CARLA.</p>
+              <a class="btn" href="https://ujinf74.github.io/projects/hero/" data-i18n="common.btn_writeup">Full writeup ↗</a>
+            </div>
+            <div class="mini-card">
+              <div class="mini-kicker">Open source</div>
+              <p data-i18n="home.work.5">Merged Autoware Universe changes for CARLA camera encoding and configurable sensor noise.</p>
+              <a class="btn" href="https://ujinf74.github.io/contributions/" data-i18n="common.btn_writeup">Full writeup ↗</a>
             </div>
           </div>
         </div>
@@ -93,7 +102,7 @@
         <div class="project-card">
           <h3 data-i18n="home.now_title">Right now</h3>
           <p data-i18n="home.now_summary">
-            Keeping ballistic-solver alive, leading autonomous driving at HuVILab, and building this playground.
+            Working on vehicle autonomy and vision at HuVILab, maintaining ballistic-solver, and developing racing telemetry tools.
           </p>
           <a class="btn" href="/now" data-i18n="home.btn_now2">What I'm on →</a>
         </div>
@@ -101,7 +110,7 @@
 
       <footer class="site-footer">
         <span data-i18n="common.footer_name">ujinf.net · Ujin Kwon · 권우진</span>
-        <span><a href="mailto:ujin@tukorea.ac.kr">email</a> · <a href="https://github.com/ujinf74">github</a></span>
+        <span><a href="mailto:ujin@tukorea.ac.kr">email</a> · <a href="https://github.com/ujinf74">github</a> · <a href="https://www.youtube.com/@tickInt">youtube</a></span>
       </footer>
     </div>
   </body>

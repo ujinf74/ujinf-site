@@ -181,17 +181,17 @@ Run:
 
 Expected: no matches in public copy.
 
-- [ ] **Step 4: Validate package and Cloudflare output**
+- [ ] **Step 4: Validate the Cloudflare Function bundle**
 
 Run:
 
-    npm run deploy -- --dry-run
+    npm.cmd run dev -- --port 8788
 
-Expected: Wrangler accepts the public directory and Function bundle without deployment.
+Expected: Wrangler reports “Compiled Worker successfully” and starts the local Pages server.
 
 - [ ] **Step 5: Static smoke check**
 
-Serve public locally and request /, /projects, /about, /now, and /projects/ballistic-solver. Confirm HTTP 200 and required identity text, HERO status, portfolio links, and YouTube links.
+Request /, /projects, /about, /now, and /projects/ballistic-solver from the local Pages server. Confirm HTTP 200 and required identity text, HERO status, portfolio links, and YouTube links. POST a sample input to /api/ballistic and confirm an ok JSON response.
 
 - [ ] **Step 6: Review and commit**
 

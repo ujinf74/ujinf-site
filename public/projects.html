@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Work · ujinf.net</title>
-    <meta name="description" content="Things I built and shipped: a nonlinear solver, real-vehicle autonomous parking, racing telemetry, and an analysis workbench.">
+    <meta name="description" content="A short overview of the engineering work Ujin Kwon does across solvers, vehicle autonomy, vision, and telemetry.">
     <link rel="canonical" href="https://ujinf.net/projects">
     <script src="/theme-init.js"></script>
     <link rel="stylesheet" href="/styles.css">
@@ -30,89 +30,57 @@
 
         <div class="project-card">
           <p data-i18n-html="projects.intro">
-            Four things I built and shipped. The deep writeups live on my <a href="https://ujinf74.github.io/projects/">portfolio</a> —
-            here are the short, honest versions. <b>ballistic-solver</b> has a live solver you can play with.
+            A short overview of the systems I work on. Detailed implementations and results live in my
+            <a href="https://ujinf74.github.io/projects/">portfolio</a>; this site keeps the context and an interactive ballistic demo.
           </p>
         </div>
 
-        <div class="project-search">
-          <input id="project-search-input" class="search-bar" type="search" placeholder="Search…" aria-label="Search work" data-i18n-attr="placeholder:projects.search_ph,aria-label:projects.search_ph">
-          <div class="tag-chips" role="group" aria-label="Filter by tag">
-            <button type="button" class="tag-chip" data-tag="solver" aria-pressed="false">solver</button>
-            <button type="button" class="tag-chip" data-tag="autonomy" aria-pressed="false">autonomy</button>
-            <button type="button" class="tag-chip" data-tag="telemetry" aria-pressed="false">telemetry</button>
-            <button type="button" class="tag-chip" data-tag="analysis" aria-pressed="false">analysis</button>
-            <button type="button" class="tag-chip" data-tag="c++" aria-pressed="false">C++</button>
-            <button type="button" class="tag-chip" data-tag="python" aria-pressed="false">Python</button>
-            <button type="button" class="tag-chip" data-tag="matlab" aria-pressed="false">MATLAB</button>
-            <button type="button" class="tag-chip" data-tag="ros2" aria-pressed="false">ROS2</button>
-          </div>
-          <p class="search-empty" id="search-empty" role="status" aria-live="polite"></p>
-        </div>
-
-        <div class="project-card" data-search-item data-tags="solver c++ python unity ballistic rk4 optimization">
+        <div class="project-card">
           <h3>ballistic-solver</h3>
-          <p data-i18n="projects.ballistic_line">Simulate-first intercept optimizer for moving targets under gravity and drag. An auxiliary-residual method, packaged as a C ABI, a PyPI wheel, and a Unity binding.</p>
-          <div class="result-strip">
-            <span>0.094 ms median</span>
-            <span>0% failure · 10k high-arc</span>
-            <span>ICROS 2026</span>
-            <span>PyPI</span>
-          </div>
+          <p data-i18n="projects.ballistic_line">A native intercept solver for moving targets under gravity, drag, and wind, distributed through C++, a C ABI, Python, and game-engine bindings.</p>
           <div class="btn-row">
-            <a class="btn" href="/projects/ballistic-solver" data-i18n="common.btn_detailed">Detailed page →</a>
+            <a class="btn" href="/projects/ballistic-solver" data-i18n="projects.btn_demo">Interactive demo →</a>
+            <a class="btn" href="https://ujinf74.github.io/projects/ballistic-solver/" data-i18n="common.btn_writeup">Full writeup ↗</a>
             <a class="btn" href="https://github.com/ujinf74/ballistic-solver">Repo</a>
-            <a class="btn" href="https://pypi.org/project/ballistic-solver/">PyPI</a>
           </div>
         </div>
 
-        <div class="project-card" data-search-item data-tags="autonomy ros2 c++ lidar fast-lio ioniq parking">
+        <div class="project-card">
           <h3>Mapless Autonomous Parking</h3>
-          <p data-i18n="projects.parking_line">Real-vehicle mapless parking on a Hyundai Ioniq. FAST-LIO odometry, a C++ occupancy grid, delay-aware tracking, straight onto the CAN bus.</p>
-          <div class="result-strip">
-            <span>Real Hyundai Ioniq</span>
-            <span>0 prebuilt maps</span>
-            <span>FAST-LIO + Autoware</span>
-          </div>
+          <p data-i18n="projects.parking_line">Mapless parking on a Hyundai Ioniq using FAST-LIO odometry, a C++ occupancy grid, planning, delay-aware tracking, and the vehicle CAN interface.</p>
           <div class="btn-row">
             <a class="btn" href="https://ujinf74.github.io/projects/mapless-autonomous-parking/" data-i18n="common.btn_writeup">Full writeup ↗</a>
           </div>
         </div>
 
-        <div class="project-card" data-search-item data-tags="telemetry python raspberry-pi rtk ntrip gnss cloudflare">
-          <h3>Racing Telemetry Stack</h3>
-          <p data-i18n="projects.telemetry_line">Car-side telemetry that survives a race weekend: RTK GPS at 20 Hz, buffered logs, and a live browser dashboard over Cloudflare.</p>
-          <div class="result-strip">
-            <span>Raspberry Pi</span>
-            <span>RTK / NTRIP</span>
-            <span>Live race use</span>
+        <div class="project-card">
+          <h3>HERO <small style="opacity:.7;">(In development)</small></h3>
+          <p data-i18n="projects.hero_line">Vision-only parking perception and a low-vision driver coaching interface, developed and measured in CARLA.</p>
+          <div class="btn-row">
+            <a class="btn" href="https://ujinf74.github.io/projects/hero/" data-i18n="common.btn_writeup">Full writeup ↗</a>
           </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Racing Telemetry Stack</h3>
+          <p data-i18n="projects.telemetry_line">A Raspberry Pi runtime for RTK/GNSS collection, buffered logs, browser monitoring, and recovery during field use.</p>
           <div class="btn-row">
             <a class="btn" href="https://ujinf74.github.io/projects/racing-telemetry-stack/" data-i18n="common.btn_writeup">Full writeup ↗</a>
           </div>
         </div>
 
-        <div class="project-card" data-search-item data-tags="analysis matlab telemetry replay segment coaching">
+        <div class="project-card">
           <h3>Racing Analyze GUI</h3>
-          <p data-i18n="projects.gui_line">A telemetry workbench that slices a lap into segments, replays them, and turns raw logs into driver coaching.</p>
-          <div class="result-strip">
-            <span>MATLAB</span>
-            <span>Segment coaching</span>
-          </div>
+          <p data-i18n="projects.gui_line">A MATLAB telemetry workbench for segment comparison, synchronized replay, and review of driver and vehicle data.</p>
           <div class="btn-row">
             <a class="btn" href="https://ujinf74.github.io/projects/racing-analyze-gui/" data-i18n="common.btn_writeup">Full writeup ↗</a>
           </div>
-        </div>
-
-        <div class="project-card" data-search-item data-tags="matlab early ev drivetrain">
-          <h3 style="margin-top:.2rem;" data-i18n-html="projects.ev_title">EV Gear Reduction Sizing <small style="opacity:.72;">(early work)</small></h3>
-          <div class="kicker" data-i18n="projects.ev_desc">MATLAB drivetrain sizing: torque–speed modeling + acceleration simulation, sweeping gear ratios to cut run time.</div>
         </div>
       </main>
 
       <footer class="site-footer">
         <span data-i18n="common.footer_name">ujinf.net · Ujin Kwon · 권우진</span>
-        <span><a href="mailto:ujin@tukorea.ac.kr">email</a> · <a href="https://github.com/ujinf74">github</a></span>
+        <span><a href="mailto:ujin@tukorea.ac.kr">email</a> · <a href="https://github.com/ujinf74">github</a> · <a href="https://www.youtube.com/@tickInt">youtube</a></span>
       </footer>
     </div>
   </body>

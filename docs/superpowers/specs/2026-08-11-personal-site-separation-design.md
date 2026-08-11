@@ -107,6 +107,6 @@ direction and must be preserved.
 - Audit every HTML i18n key against the Korean dictionary.
 - Check internal links and required external portfolio/YouTube links.
 - Search for removed dramatic phrases and stale ballistic claims.
-- Run a Cloudflare/Wrangler dry-run.
+- Compile the Cloudflare Pages Function through the local Wrangler server.
 - Serve the static site locally and smoke-check Home, Work, About, Now, and
   the interactive ballistic page in both language modes.
