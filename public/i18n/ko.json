@@ -21,12 +21,14 @@
       "중력, 항력, 바람 조건에서 움직이는 표적을 계산하는 네이티브 요격 솔버. Python과 게임 엔진 바인딩을 제공한다.",
       "LiDAR-관성 오도메트리, 점유 지도, 경로 계획, 차량 제어를 연결한 현대 아이오닉 맵리스 주차.",
       "RTK/GNSS 수집, 버퍼 로그, 원격 모니터링, 현장 복구를 위한 Raspberry Pi 런타임.",
-      "구간 비교, 동기화 리플레이, 레이싱 텔레메트리 검토를 위한 MATLAB 워크벤치.",
-      "CARLA에서 개발 중인 카메라 기반 주차 인지와 저시력 운전자 안내 인터페이스.",
-      "CARLA 카메라 인코딩과 센서 노이즈 설정을 개선한 Autoware Universe 병합 기여."
+      "게이트 기준 랩 정렬, 구간 비교, 동기화 리플레이, 리포트 내보내기를 지원하는 PySide6 패키지 워크벤치.",
+      "Monoscale 인지를 기반으로 한 저시력 운전자용 주차 안내 HUD (탐색 단계).",
+      "Autoware의 CARLA 시뮬레이터 브리지인 <b>Autoware Universe autoware_carla_interface</b>의 메인테이너. 센서·카메라 경로에 일곱 건의 변경을 병합한 뒤 메인테이너로 합류했다.",
+      "카메라 높이와 지면 기하만으로 미터 단위 카메라 오도메트리와 조밀 점유 지도를 구하는 학습 없는 방법. CARLA에서 평가했다."
     ],
     "now_title": "지금",
-    "now_summary": "HuVILab에서 차량 자율주행과 비전 시스템을 개발하고, ballistic-solver와 레이싱 텔레메트리 도구를 관리하고 있다."
+    "now_summary": "Autoware의 CARLA 인터페이스를 메인테이너로 관리하고, HuVILab에서 차량 자율주행·비전 개발을 이끌며, ballistic-solver와 레이싱 텔레메트리 도구를 이어가고 있다.",
+    "work_os_kicker": "오픈소스 · 메인테이너"
   },
   "story": {
     "title": "배경",
@@ -44,10 +46,11 @@
     "hist": [
       "<b>HuVILab 자율주행 팀 리드</b> (2026–현재) — 맵리스 주차와 HERO를 포함한 차량 자율주행·비전 개발.",
       "<b>Luxon Racing 텔레메트리·분석</b> — GT-A 클래스, O-NE 슈퍼레이스 챔피언십.",
-      "<b>KSAE 2024 스마트 e-모빌리티(EV)</b> — 장려상."
+      "<b>KSAE 2024 스마트 e-모빌리티(EV)</b> — 장려상.",
+      "<b>Autoware Universe autoware_carla_interface 메인테이너</b> (2026-10–현재) — Autoware의 CARLA 시뮬레이터 브리지."
     ],
     "open_source_title": "오픈소스",
-    "open_source": "<b>Autoware Universe</b>의 CARLA 인터페이스에 카메라 인코딩 설정과 IMU/GNSS 노이즈 설정을 추가한 두 변경이 병합됐다. 구현 내용은 <a href=\"https://ujinf74.github.io/contributions/\">포트폴리오</a>에 정리했다.",
+    "open_source": "<b>Autoware Universe</b>의 <a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>autoware_carla_interface</b></a> 메인테이너다. 메인테이너로 합류하기 전 센서 발행 타이밍, 캡처 주기, 캡처 프레임 타임스탬프, <code>mono8</code>/<code>bgr8</code> 카메라 출력, 깊이·시맨틱 카메라, IMU/GNSS 노이즈 설정까지 일곱 건의 변경이 병합됐다. 측정 결과는 <a href=\"https://ujinf74.github.io/contributions/\">포트폴리오</a>에 정리했다.",
     "contact_title": "연락",
     "contact": "이메일 <a href=\"mailto:ujin@tukorea.ac.kr\">ujin@tukorea.ac.kr</a> · GitHub <a href=\"https://github.com/ujinf74\">github.com/ujinf74</a> · YouTube <a href=\"https://www.youtube.com/@tickInt\">youtube.com/@tickInt</a> · 포트폴리오 <a href=\"https://ujinf74.github.io\">ujinf74.github.io</a>"
   },
@@ -57,28 +60,40 @@
     "btn_demo": "인터랙티브 데모 →",
     "ballistic_line": "중력, 항력, 바람 조건에서 움직이는 표적을 계산하는 네이티브 요격 솔버. C++, C ABI, Python, 게임 엔진 바인딩으로 배포한다.",
     "parking_line": "FAST-LIO 오도메트리, C++ 점유 격자, 경로 계획, 지연 보상 추종, 차량 CAN 인터페이스를 연결한 현대 아이오닉 맵리스 주차.",
-    "hero_line": "CARLA에서 개발·측정 중인 카메라 기반 주차 인지와 저시력 운전자 안내 인터페이스.",
+    "hero_line": "Monoscale 인지를 기반으로 주차 통로, 정지선, 기어 상태, 성능 저하 상태를 안내하는 저시력 운전자용 HUD (탐색 단계).",
     "telemetry_line": "RTK/GNSS 수집, 버퍼 로그, 브라우저 모니터링, 현장 복구를 위한 Raspberry Pi 런타임.",
-    "gui_line": "구간 비교, 동기화 리플레이, 운전자·차량 데이터 검토를 위한 MATLAB 텔레메트리 워크벤치."
+    "gui_line": "게이트 기준 타이밍, 구간 비교, 동기화 미디어, 시뮬레이터 정합, 리포트 내보내기를 지원하는 PySide6 패키지 워크벤치.",
+    "autoware_line": "Autoware의 CARLA 시뮬레이터 브리지 메인테이너. 센서 타이밍, 캡처 주기, 타임스탬프, 카메라 출력, 센서 노이즈에 걸친 일곱 건의 변경이 병합된 뒤 합류했다.",
+    "monoscale_line": "알려진 카메라 높이와 지면 기하로 미터 단위 카메라 운동과 조밀 점유 지도를 구하는 학습 없는 방법. CARLA 주행 9건으로 평가했다."
   },
   "now": {
     "h1": "지금",
     "lead": "지금 만들고 쓰는 것들. 바뀌면 갱신한다.",
-    "updated": "마지막 갱신 2026-08",
+    "updated": "마지막 갱신 2026-10",
     "now_title": "하는 일",
     "now": [
-      "<b>HERO</b> — CARLA에서 카메라 기반 주차 인지와 저시력 운전자 안내 인터페이스를 개발 중.",
+      "<b>HERO</b> — Monoscale 위에 저시력 운전자용 주차 안내 HUD를 탐색 중.",
       "<b>ballistic-solver</b>를 유지보수하고 네이티브 솔버를 엣지 하드웨어에서 검증.",
       "<b>HuVILab</b>에서 아이오닉 맵리스 주차를 포함한 자율주행 개발을 이끎.",
       "레이싱 텔레메트리 수집·분석 환경을 관리.",
-      "개인 웹사이트의 내용을 현재 작업에 맞게 갱신."
+      "개인 웹사이트의 내용을 현재 작업에 맞게 갱신.",
+      "Autoware Universe <b>autoware_carla_interface</b> 메인테이너 — 변경 리뷰와 함께 기어 명령, 물리 서브스텝, 외부 ego 부착 제안을 진행 중.",
+      "학습 없는 미터 단위 카메라 오도메트리·조밀 점유 지도 <b>Monoscale</b> 개발."
     ],
     "uses_title": "쓰는 것",
     "uses": [
-      { "k": "언어" },
-      { "k": "로보틱스 / 자율주행" },
-      { "k": "하드웨어" },
-      { "k": "도구 · 인프라" }
+      {
+        "k": "언어"
+      },
+      {
+        "k": "로보틱스 / 자율주행"
+      },
+      {
+        "k": "하드웨어"
+      },
+      {
+        "k": "도구 · 인프라"
+      }
     ]
   },
   "proj_ballistic": {
