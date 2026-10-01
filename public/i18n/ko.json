@@ -52,7 +52,9 @@
     "open_source_title": "오픈소스",
     "open_source": "<b>Autoware Universe</b>의 <a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>autoware_carla_interface</b></a> 메인테이너다. 메인테이너로 합류하기 전 센서 발행 타이밍, 캡처 주기, 캡처 프레임 타임스탬프, <code>mono8</code>/<code>bgr8</code> 카메라 출력, 깊이·시맨틱 카메라, IMU/GNSS 노이즈 설정까지 일곱 건의 변경이 병합됐다. 측정 결과는 <a href=\"https://ujinf74.github.io/contributions/\">포트폴리오</a>에 정리했다.",
     "contact_title": "연락",
-    "contact": "이메일 <a href=\"mailto:ujin@tukorea.ac.kr\">ujin@tukorea.ac.kr</a> · GitHub <a href=\"https://github.com/ujinf74\">github.com/ujinf74</a> · YouTube <a href=\"https://www.youtube.com/@tickInt\">youtube.com/@tickInt</a> · 포트폴리오 <a href=\"https://ujinf74.github.io\">ujinf74.github.io</a>"
+    "contact": "이메일 <a href=\"mailto:ujin@tukorea.ac.kr\">ujin@tukorea.ac.kr</a> · GitHub <a href=\"https://github.com/ujinf74\">github.com/ujinf74</a> · YouTube <a href=\"https://www.youtube.com/@tickInt\">youtube.com/@tickInt</a> · 포트폴리오 <a href=\"https://ujinf74.github.io\">ujinf74.github.io</a>",
+    "pub_title": "논문",
+    "pub": "<b>권우진</b> (단독저자), 「보조해 유도 잔차를 이용한 비선형 반복 보정과 탄도 요격 적용」, <i>2026 제41회 제어·로봇·시스템학회 학술대회</i>, 대구, 2026년 7월, pp. 686–687. 이 방법은 <a href=\"/projects/ballistic-solver\">ballistic-solver</a>에 <code>solve_aux</code>로 남아 있다. <a href=\"https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12952462\">DBpia ↗</a>"
   },
   "projects": {
     "h1": "작업",
@@ -118,7 +120,8 @@
     "note": [
       "네이티브 패키지는 현대적인 <b>C++ API</b>, 안정적인 <b>C ABI</b>, Python/PyPI, 게임 엔진 바인딩을 제공한다.",
       "기존 보조 잔차 연구 경로는 비교와 재현을 위해 <b>solve_aux</b>로 유지한다.",
-      "네이티브 ARM64 솔버를 <b>Rock 5B</b> 비전 입력과 <b>STM32</b> 폐루프 액추에이터 제어에도 통합했다."
+      "네이티브 ARM64 솔버를 <b>Rock 5B</b> 비전 입력과 <b>STM32</b> 폐루프 액추에이터 제어에도 통합했다.",
+      "<b>solve_aux</b>의 보조 잔차는 단독저자 <a href=\"https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12952462\">ICROS 2026 논문</a>으로 발표했다. 고각 10,000건에서 실패율 0.00%로, 직접 시선각 보정(50.25%)보다 안정적이었다."
     ]
   }
 }
