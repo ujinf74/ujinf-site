@@ -28,7 +28,8 @@
     ],
     "now_title": "지금",
     "now_summary": "Autoware의 CARLA 인터페이스를 메인테이너로 관리하고, HuVILab에서 차량 자율주행·비전 개발을 이끌며, ballistic-solver와 레이싱 텔레메트리 도구를 이어가고 있다.",
-    "work_os_kicker": "오픈소스 · 메인테이너"
+    "work_os_kicker": "오픈소스 · 메인테이너",
+    "lead": "<a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>Autoware Universe autoware_carla_interface</b></a> 메인테이너. 자율주행, 차량 시뮬레이션, 수치해석, 텔레메트리를 다룬다."
   },
   "story": {
     "title": "배경",
@@ -52,7 +53,7 @@
     "open_source_title": "오픈소스",
     "open_source": "<b>Autoware Universe</b>의 <a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>autoware_carla_interface</b></a> 메인테이너다. 메인테이너로 합류하기 전 센서 발행 타이밍, 캡처 주기, 캡처 프레임 타임스탬프, <code>mono8</code>/<code>bgr8</code> 카메라 출력, 깊이·시맨틱 카메라, IMU/GNSS 노이즈 설정까지 일곱 건의 변경이 병합됐다. 측정 결과는 <a href=\"https://ujinf74.github.io/contributions/\">포트폴리오</a>에 정리했다.",
     "contact_title": "연락",
-    "contact": "이메일 <a href=\"mailto:ujin@tukorea.ac.kr\">ujin@tukorea.ac.kr</a> · GitHub <a href=\"https://github.com/ujinf74\">github.com/ujinf74</a> · YouTube <a href=\"https://www.youtube.com/@tickInt\">youtube.com/@tickInt</a> · 포트폴리오 <a href=\"https://ujinf74.github.io\">ujinf74.github.io</a>",
+    "contact": "이메일 <a href=\"mailto:ujin@tukorea.ac.kr\">ujin@tukorea.ac.kr</a> · GitHub <a href=\"https://github.com/ujinf74\">github.com/ujinf74</a> · YouTube <a href=\"https://www.youtube.com/@tickInt\">youtube.com/@tickInt</a> · 포트폴리오 <a href=\"https://ujinf74.github.io\">ujinf74.github.io</a> · ORCID <a href=\"https://orcid.org/0009-0007-7339-7650\">0009-0007-7339-7650</a>",
     "pub_title": "논문",
     "pub": "<b>권우진</b> (단독저자), 「보조해 유도 잔차를 이용한 비선형 반복 보정과 탄도 요격 적용」, <i>2026 제41회 제어·로봇·시스템학회 학술대회</i>, 대구, 2026년 7월, pp. 686–687. 이 방법은 <a href=\"/projects/ballistic-solver\">ballistic-solver</a>에 <code>solve_aux</code>로 남아 있다. <a href=\"https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12952462\">DBpia ↗</a>"
   },
