@@ -22,6 +22,7 @@ public/                    Static site served by Cloudflare Pages
   trajectory.js            Front-end RK4 re-integration + canvas plot of arcs
   solver.js                ballistic-solver form → /api/ballistic → output + event
   i18n/ko.json             Korean dictionary (English lives in the HTML)
+  robots.txt  sitemap.xml  Crawl rules + URL list for Search Console (update lastmod/URLs when pages change)
   i18n/ui.json             JS-generated UI strings (EN+KO)
   assets/                  images + videos
 functions/api/ballistic.js Pages Function: RK4 drag/wind + closest-approach + LM solve
