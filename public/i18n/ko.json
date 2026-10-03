@@ -48,7 +48,7 @@
       "<b>HuVILab 자율주행 팀 리드</b> (2026–현재) — 맵리스 주차와 HERO를 포함한 차량 자율주행·비전 개발.",
       "<b>Luxon Racing 레이스 엔지니어</b> — GT-A 클래스, O-NE 슈퍼레이스 챔피언십. 텔레메트리와 데이터 분석 담당. 2026 5라운드에서 최진욱 선수와 3위로 팀 첫 포디움.",
       "<b>KSAE 2024 스마트 e-모빌리티(EV)</b> — 장려상.",
-      "<b>Autoware Universe autoware_carla_interface 메인테이너</b> (2026-10–현재) — Autoware의 CARLA 시뮬레이터 브리지."
+      "<b>Autoware Universe autoware_carla_interface 메인테이너</b> — Autoware의 CARLA 시뮬레이터 브리지."
     ],
     "open_source_title": "오픈소스",
     "open_source": "<b>Autoware Universe</b>의 <a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>autoware_carla_interface</b></a> 메인테이너다. 메인테이너로 합류하기 전 센서 발행 타이밍, 캡처 주기, 캡처 프레임 타임스탬프, <code>mono8</code>/<code>bgr8</code> 카메라 출력, 깊이·시맨틱 카메라, IMU/GNSS 노이즈 설정까지 일곱 건의 변경이 병합됐다. 측정 결과는 <a href=\"https://ujinf74.github.io/contributions/\">포트폴리오</a>에 정리했다.",
