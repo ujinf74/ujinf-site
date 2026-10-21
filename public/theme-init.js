@@ -5,12 +5,15 @@
   d.classList.add("js");
   try {
     var t = localStorage.getItem("theme") || "dark";
-    var l = localStorage.getItem("lang") || "en";
+    var l = localStorage.getItem("lang") || "ko";
     d.setAttribute("data-theme", t);
     d.setAttribute("data-lang", l);
+    d.lang = l;
     if (l === "ko") d.classList.add("i18n-pending");
   } catch (e) {
     d.setAttribute("data-theme", "dark");
-    d.setAttribute("data-lang", "en");
+    d.setAttribute("data-lang", "ko");
+    d.lang = "ko";
+    d.classList.add("i18n-pending");
   }
 })();
