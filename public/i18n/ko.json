@@ -1,22 +1,23 @@
 {
   "common": {
-    "nav_projects": "작업",
+    "nav_projects": "프로젝트",
     "nav_about": "소개",
-    "nav_now": "요즘",
+    "nav_now": "진행 중",
     "footer_name": "ujinf.net · 권우진 · Ujin Kwon",
-    "btn_view": "보기 →",
-    "btn_writeup": "전체 글 ↗",
-    "btn_detailed": "상세 페이지 →",
-    "btn_back": "작업으로",
-    "result": "결과"
+    "btn_view": "자세히 보기 →",
+    "btn_writeup": "개발 내용 ↗",
+    "btn_detailed": "상세 내용 →",
+    "btn_back": "프로젝트 목록",
+    "result": "결과",
+    "nav_contact": "연락"
   },
   "home": {
-    "manifesto": "코드, 게임, 시뮬레이션, 차량처럼 움직이는 시스템을 만듭니다. 있는 걸 쓰기보다 직접 만들어 보는 쪽을 좋아합니다.",
-    "manifesto2": "직접 만들어 봐야 비로소 제대로 이해가 되더라고요.",
-    "btn_work": "작업 보기 →",
-    "btn_now": "요즘 하는 일 →",
-    "btn_now2": "요즘 하는 일 →",
-    "work_title": "하는 일",
+    "manifesto": "실제 시스템의 운동을 계산 가능한 모델로 옮기고, 시뮬레이션과 계측 결과가 어디서 달라지는지 확인하는 일을 합니다.",
+    "manifesto2": "자율주행 소프트웨어, 수치 솔버, 시뮬레이터 연동, 주행 데이터 분석을 다룹니다.",
+    "btn_work": "프로젝트 보기 →",
+    "btn_now": "진행 중인 작업 →",
+    "btn_now2": "진행 중인 작업 →",
+    "work_title": "주요 프로젝트",
     "work": [
       "중력, 공기저항, 바람이 있는 조건에서 움직이는 표적을 맞히는 발사각을 계산하는 솔버입니다. Python과 게임 엔진에서도 쓸 수 있습니다.",
       "LiDAR-관성 오도메트리, 점유 지도, 경로 계획, 차량 제어를 연결해 현대 아이오닉으로 지도 없이 주차하는 시스템입니다.",
@@ -26,24 +27,27 @@
       "Autoware의 CARLA 시뮬레이터 연동 패키지인 <b>Autoware Universe autoware_carla_interface</b>의 메인테이너를 맡고 있습니다. 센서, 카메라, 차량 제어 경로에 여덟 건의 변경을 반영했습니다.",
       "카메라 높이와 지면 기하만으로 실제 거리 단위의 카메라 이동과 주변 점유 지도를 구하는, 학습이 필요 없는 방법입니다. CARLA에서 평가했습니다."
     ],
-    "now_title": "요즘",
-    "now_summary": "Autoware의 CARLA 연동 패키지를 메인테이너로 관리하고 있고, HuVILab에서 자율주행·비전 개발을 이끌고 있습니다. ballistic-solver와 레이싱 텔레메트리 도구도 꾸준히 다듬고 있습니다.",
+    "now_title": "진행 중인 작업",
+    "now_summary": "Autoware의 CARLA 연동 패키지를 유지보수하며, 비전 기반 위치 추정과 차량 자율주행 시스템을 개발하고 있습니다. 수치 솔버와 텔레메트리 도구도 관리하고 있습니다.",
     "work_os_kicker": "오픈소스 · 메인테이너",
-    "lead": "<a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>Autoware Universe autoware_carla_interface</b></a> 메인테이너입니다. 자율주행, 차량 시뮬레이션, 수치해석, 텔레메트리를 다룹니다."
+    "lead": "Autoware Universe의 <a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>autoware_carla_interface</b></a> 패키지 메인테이너입니다. 차량 소프트웨어, 수치 모델링, 시뮬레이션 검증을 주로 다룹니다.",
+    "contact_title": "연락·협업",
+    "contact_text": "연구·개발 협업, 세미나와 강연, Autoware·CARLA 관련 문의를 받고 있습니다.",
+    "btn_contact": "연락하기 →"
   },
   "story": {
     "title": "배경",
-    "p1": "<b>Garry's Mod</b>의 <b>E2 / Wiremod</b>로 차량 동역학, 서스펜션, 텔레메트리를 만들면서 물리와 제어 프로그래밍을 처음 시작했습니다.",
-    "p2": "그때 다루던 문제들을 지금은 실제 소프트웨어에서 다루고 있습니다. <b>궤적 솔버</b>, <b>차량 자율주행</b>, 그리고 실제 데이터를 모으고 들여다보는 도구를 만들고 있습니다.",
+    "p1": "<b>Garry's Mod</b>의 <b>E2 / Wiremod</b>로 차량 동역학과 제어 코드를 작성하면서 개발을 시작했습니다.",
+    "p2": "이후 <b>수치 솔버</b>, <b>차량 자율주행</b>, <b>계측 데이터 분석</b>으로 작업 범위를 넓혔습니다.",
     "timeline_title": "배경",
-    "timeline_intro": "<b>Garry's Mod</b>의 <b>E2 / Wiremod</b>로 물리와 제어 시스템을 프로그래밍하면서 시작했습니다. 차량 동역학, 서스펜션, 비행 모델, 텔레메트리를 직접 만들어 봤습니다.",
-    "games_detail": "적분, 피드백 제어, 계측을 몸으로 익힌 첫 개발 환경이었습니다. 지금은 같은 주제를 독립 솔버, 차량 소프트웨어, 데이터 수집 시스템에서 다루고 있습니다."
+    "timeline_intro": "<b>Garry's Mod</b>에서 물리엔진을 이용해 차량 동역학과 구동·제어 시스템을 구현했습니다.",
+    "games_detail": "현재는 차량 소프트웨어, 수치해석, 데이터 계측과 시뮬레이션 검증에서 비슷한 문제를 다룹니다."
   },
   "about": {
     "h1": "소개",
-    "manifesto": "차량 자율주행, 수치 솔버, 비전, 텔레메트리 시스템을 개발하고 있습니다.",
-    "lead": "한국공학대학교에서 기계·컴퓨터공학을 전공하고 있으며, 제어와 수치해석을 중심으로 공부하고 있습니다.",
-    "history_title": "지금 하는 일",
+    "manifesto": "물리 기반 모델링, 자율주행 소프트웨어, 수치해석, 텔레메트리 분석을 주로 다룹니다.",
+    "lead": "한국공학대학교 기계설계공학부에서 공부하며 차량 시스템과 계산 모델을 개발하고 있습니다.",
+    "history_title": "활동",
     "hist": [
       "<b>HuVILab 자율주행 팀장</b> (2026–현재) — 맵리스 주차와 HERO를 포함한 차량 자율주행·비전 개발을 맡고 있습니다.",
       "<b>Luxon Racing 레이스 엔지니어</b> — O-NE 슈퍼레이스 챔피언십 GT-A 클래스에서 텔레메트리와 데이터 분석을 담당합니다. 2026 시즌 5라운드에서 최진욱 선수와 함께 팀 첫 포디움(3위)을 기록했습니다.",
@@ -52,16 +56,17 @@
     ],
     "open_source_title": "오픈소스",
     "open_source": "<b>Autoware Universe</b>의 <a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>autoware_carla_interface</b></a> 메인테이너를 맡고 있습니다. 센서 발행 타이밍, 캡처 주기, 캡처 프레임 타임스탬프, <code>mono8</code>/<code>bgr8</code> 카메라 출력, 깊이·시맨틱 카메라, IMU/GNSS 노이즈 설정, 기어 명령 처리까지 여덟 건의 변경이 반영됐습니다. 메인테이너 선임 소식은 <a href=\"https://www.ksae.org/bbs/?number=71717&mode=view&code=member\">한국자동차공학회 회원동정</a>에도 실렸습니다. 측정 결과는 <a href=\"https://ujinf74.github.io/contributions/\">포트폴리오</a>에 정리해 두었습니다.",
-    "contact_title": "연락",
+    "contact_title": "연락처",
     "contact": "이메일 <a href=\"mailto:ujin@tukorea.ac.kr\">ujin@tukorea.ac.kr</a><br>GitHub <a href=\"https://github.com/ujinf74\">github.com/ujinf74</a><br>YouTube <a href=\"https://www.youtube.com/@tickInt\">youtube.com/@tickInt</a><br>포트폴리오 <a href=\"https://ujinf74.github.io\">ujinf74.github.io</a><br>ORCID <a href=\"https://orcid.org/0009-0007-7339-7650\">0009-0007-7339-7650</a>",
     "pub_title": "논문",
     "pub": "<b>권우진</b> (단독저자), 「보조해 유도 잔차를 이용한 비선형 반복 보정과 탄도 요격 적용」, <i>2026 제41회 제어·로봇·시스템학회 학술대회</i>, 대구, 2026년 7월, pp. 686–687. 이 방법은 <a href=\"/projects/ballistic-solver\">ballistic-solver</a>에 <code>solve_aux</code>로 들어 있습니다. <a href=\"https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12952462\">DBpia ↗</a>",
     "press_title": "언론 보도",
-    "press_lead": "Autoware Universe 메인테이너 선임 소식을 다룬 기사입니다."
+    "press_lead": "Autoware Universe 패키지 메인테이너 선임 관련 보도입니다.",
+    "contact_link": "협업·문의 안내 →"
   },
   "projects": {
-    "h1": "작업",
-    "intro": "지금 다루고 있는 시스템을 간단히 소개하는 페이지입니다. 구현과 결과는 <a href=\"https://ujinf74.github.io/projects/\">포트폴리오</a>에 자세히 정리해 두었고, 이곳에는 배경 이야기와 직접 돌려볼 수 있는 탄도 데모를 두었습니다.",
+    "h1": "프로젝트",
+    "intro": "주요 개발 작업을 정리했습니다. 구현과 실험 결과는 <a href=\"https://ujinf74.github.io/projects/\">포트폴리오</a>에 있으며, 탄도 솔버는 이 사이트에서 직접 실행할 수 있습니다.",
     "btn_demo": "인터랙티브 데모 →",
     "ballistic_line": "중력, 공기저항, 바람이 있는 조건에서 움직이는 표적을 맞히는 발사각을 계산하는 솔버입니다. C++, C ABI, Python, 게임 엔진 바인딩으로 배포하고 있습니다.",
     "parking_line": "FAST-LIO 오도메트리, C++ 점유 격자, 경로 계획, 지연을 보상하는 경로 추종, 차량 CAN 인터페이스를 연결해 현대 아이오닉으로 지도 없이 주차하는 시스템입니다.",
@@ -72,20 +77,20 @@
     "monoscale_line": "카메라 높이와 지면 기하만으로 실제 거리 단위의 카메라 이동과 점유 지도를 구하는, 학습이 필요 없는 방법입니다. CARLA 주행 9건으로 평가했습니다."
   },
   "now": {
-    "h1": "요즘",
-    "lead": "요즘 만들고 있는 것과 쓰고 있는 도구들입니다. 바뀌는 대로 고쳐 둡니다.",
+    "h1": "진행 중인 작업",
+    "lead": "최근 진행하고 있는 개발 작업과 사용하는 도구를 정리했습니다.",
     "updated": "마지막 업데이트 2026-10",
-    "now_title": "하는 일",
+    "now_title": "개발 현황",
     "now": [
       "<b>HERO</b> — Monoscale을 바탕으로 저시력 운전자용 주차 안내 HUD를 만들고 있습니다.",
       "<b>ballistic-solver</b>를 관리하면서 네이티브 솔버를 엣지 하드웨어에서 검증하고 있습니다.",
       "<b>HuVILab</b>에서 아이오닉 맵리스 주차를 비롯한 자율주행 개발을 이끌고 있습니다.",
       "레이싱 텔레메트리 수집·분석 환경을 운영하고 있습니다.",
-      "이 웹사이트를 지금 하는 일에 맞게 꾸준히 고치고 있습니다.",
-      "Autoware Universe <b>autoware_carla_interface</b> 메인테이너로서 변경 사항을 리뷰하고, 물리 서브스텝과 외부 ego 부착 제안을 진행하고 있습니다.",
+      "이 웹사이트의 프로젝트 내용과 기술 문서를 업데이트하고 있습니다.",
+      "Autoware Universe <b>autoware_carla_interface</b>를 유지보수하며 물리 서브스텝·외부 ego 연동 관련 제안을 진행하고 있습니다.",
       "학습 없이 실제 거리 단위의 카메라 오도메트리와 점유 지도를 구하는 <b>Monoscale</b>을 개발하고 있습니다."
     ],
-    "uses_title": "쓰는 도구",
+    "uses_title": "기술 환경",
     "uses": [
       {
         "k": "언어"
@@ -126,5 +131,22 @@
       "네이티브 ARM64 솔버를 <b>Rock 5B</b> 비전 입력, <b>STM32</b> 폐루프 액추에이터 제어와도 통합해 실제 하드웨어에서 돌려 봤습니다.",
       "<b>solve_aux</b>의 보조 잔차 방식은 단독저자 <a href=\"https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12952462\">ICROS 2026 논문</a>으로 발표했습니다. 고각 10,000건에서 실패율 0.00%로, 직접 시선각 보정(50.25%)보다 훨씬 안정적이었습니다."
     ]
+  },
+  "contact": {
+    "h1": "연락",
+    "lead": "이메일로 연락 주시는 게 가장 빠릅니다. 연구 협업, 세미나·강연, 오픈소스, 언론 관련 문의 모두 받고 있습니다.",
+    "topics_title": "이런 문의를 받습니다",
+    "collab_title": "연구·개발 협업",
+    "collab_body": "자율주행 소프트웨어, 시뮬레이션과 검증, 수치 모델링, 차량 텔레메트리 분야의 공동 프로젝트, 학생 연구, 연구실 협업 모두 환영합니다.",
+    "talks_title": "세미나·강연",
+    "talks_body": "전공 수업과 연구실을 대상으로 기술 발표를 할 수 있습니다. 시뮬레이션과 실제 차량의 차이, Autoware–CARLA 인터페이스 개발, 수치 모델링과 검증 같은 주제를 다룰 수 있습니다.",
+    "oss_title": "Autoware · autoware_carla_interface",
+    "oss_body": "<a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>autoware_carla_interface</b></a> 메인테이너를 맡고 있습니다. 버그 제보나 기능 제안은 다른 메인테이너도 함께 볼 수 있도록 <a href=\"https://github.com/autowarefoundation/autoware_universe/issues\">GitHub 이슈</a>로 남겨 주시고, 그 밖의 내용은 이메일로 편하게 연락 주세요.",
+    "press_title": "언론·기타 문의",
+    "press_body": "참고 자료는 논문과 <a href=\"https://www.ksae.org/bbs/?number=71717&amp;mode=view&amp;code=member\">관련 보도</a>를 포함해 <a href=\"/about\">소개</a> 페이지에 정리해 두었습니다.",
+    "tips_title": "함께 알려주시면 좋은 내용",
+    "tips_body": "소속과 문의 내용을 함께 알려주세요.",
+    "elsewhere_title": "다른 곳에서",
+    "portfolio_label": "포트폴리오"
   }
 }

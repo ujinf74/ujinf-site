@@ -939,3 +939,7 @@ body,
   color:var(--accent);
   min-height:1.3em;
 }
+
+/* sub-headings inside cards (seminar topics) */
+.project-card h4{ margin:1rem 0 .3rem; font-size:1rem; font-weight:600; color:var(--accent); }
+.project-card h4 + p{ margin-top:0; }

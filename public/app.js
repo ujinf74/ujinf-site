@@ -31,6 +31,7 @@
   function applyLang(l) {
     lang = l;
     root.setAttribute("data-lang", l);
+    root.lang = l;
     if (l === "ko" && dict) {
       i18nNodes.forEach((el) => {
         if (el.hasAttribute("data-i18n")) {
