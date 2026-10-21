@@ -2,7 +2,7 @@
   "common": {
     "nav_projects": "작업",
     "nav_about": "소개",
-    "nav_now": "지금",
+    "nav_now": "요즘",
     "footer_name": "ujinf.net · 권우진 · Ujin Kwon",
     "btn_view": "보기 →",
     "btn_writeup": "전체 글 ↗",
@@ -11,81 +11,81 @@
     "result": "결과"
   },
   "home": {
-    "manifesto": "코드, 게임, 시뮬레이션, 차량 같은 시스템을 만든다. 그냥 쓰기보다 직접 만들어보는 쪽이다.",
-    "manifesto2": "만들어봐야 대개 제대로 이해가 된다.",
+    "manifesto": "코드, 게임, 시뮬레이션, 차량처럼 움직이는 시스템을 만듭니다. 있는 걸 쓰기보다 직접 만들어 보는 쪽을 좋아합니다.",
+    "manifesto2": "직접 만들어 봐야 비로소 제대로 이해가 되더라고요.",
     "btn_work": "작업 보기 →",
-    "btn_now": "지금 뭐 하는지 →",
-    "btn_now2": "지금 뭐 하는지 →",
+    "btn_now": "요즘 하는 일 →",
+    "btn_now2": "요즘 하는 일 →",
     "work_title": "하는 일",
     "work": [
-      "중력, 항력, 바람 조건에서 움직이는 표적을 계산하는 네이티브 요격 솔버. Python과 게임 엔진 바인딩을 제공한다.",
-      "LiDAR-관성 오도메트리, 점유 지도, 경로 계획, 차량 제어를 연결한 현대 아이오닉 맵리스 주차.",
-      "RTK/GNSS 수집, 버퍼 로그, 원격 모니터링, 현장 복구를 위한 Raspberry Pi 런타임.",
-      "게이트 기준 랩 정렬, 구간 비교, 동기화 리플레이, 리포트 내보내기를 지원하는 PySide6 패키지 워크벤치.",
-      "Monoscale 인지를 기반으로 한 저시력 운전자용 주차 안내 HUD (탐색 단계).",
-      "Autoware의 CARLA 시뮬레이터 브리지인 <b>Autoware Universe autoware_carla_interface</b>의 메인테이너. 센서·카메라·차량 제어 경로에 여덟 건의 변경이 병합됐다.",
-      "카메라 높이와 지면 기하만으로 미터 단위 카메라 오도메트리와 조밀 점유 지도를 구하는 학습 없는 방법. CARLA에서 평가했다."
+      "중력, 공기저항, 바람이 있는 조건에서 움직이는 표적을 맞히는 발사각을 계산하는 솔버입니다. Python과 게임 엔진에서도 쓸 수 있습니다.",
+      "LiDAR-관성 오도메트리, 점유 지도, 경로 계획, 차량 제어를 연결해 현대 아이오닉으로 지도 없이 주차하는 시스템입니다.",
+      "RTK/GNSS 데이터를 수집하고, 로그를 안전하게 남기고, 원격으로 모니터링하는 Raspberry Pi 기반 레이싱 텔레메트리 런타임입니다.",
+      "랩 정렬, 구간 비교, 영상 동기화 리플레이, 리포트 내보내기를 지원하는 PySide6 텔레메트리 분석 도구입니다.",
+      "Monoscale 인지를 바탕으로 저시력 운전자의 주차를 돕는 HUD입니다. 현재 개발 중입니다.",
+      "Autoware의 CARLA 시뮬레이터 연동 패키지인 <b>Autoware Universe autoware_carla_interface</b>의 메인테이너를 맡고 있습니다. 센서, 카메라, 차량 제어 경로에 여덟 건의 변경을 반영했습니다.",
+      "카메라 높이와 지면 기하만으로 실제 거리 단위의 카메라 이동과 주변 점유 지도를 구하는, 학습이 필요 없는 방법입니다. CARLA에서 평가했습니다."
     ],
-    "now_title": "지금",
-    "now_summary": "Autoware의 CARLA 인터페이스를 메인테이너로 관리하고, HuVILab에서 차량 자율주행·비전 개발을 이끌며, ballistic-solver와 레이싱 텔레메트리 도구를 이어가고 있다.",
+    "now_title": "요즘",
+    "now_summary": "Autoware의 CARLA 연동 패키지를 메인테이너로 관리하고 있고, HuVILab에서 자율주행·비전 개발을 이끌고 있습니다. ballistic-solver와 레이싱 텔레메트리 도구도 꾸준히 다듬고 있습니다.",
     "work_os_kicker": "오픈소스 · 메인테이너",
-    "lead": "<a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>Autoware Universe autoware_carla_interface</b></a> 메인테이너. 자율주행, 차량 시뮬레이션, 수치해석, 텔레메트리를 다룬다."
+    "lead": "<a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>Autoware Universe autoware_carla_interface</b></a> 메인테이너입니다. 자율주행, 차량 시뮬레이션, 수치해석, 텔레메트리를 다룹니다."
   },
   "story": {
     "title": "배경",
-    "p1": "<b>Garry's Mod</b>의 <b>E2 / Wiremod</b>로 차량 동역학, 서스펜션, 텔레메트리를 만들면서 물리와 제어 프로그래밍을 시작했다.",
-    "p2": "이후 같은 종류의 문제를 독립 소프트웨어에서 다루게 됐다. <b>궤적 솔버</b>, <b>차량 자율주행</b>, 실제 데이터를 수집하고 살펴보는 도구를 개발하고 있다.",
+    "p1": "<b>Garry's Mod</b>의 <b>E2 / Wiremod</b>로 차량 동역학, 서스펜션, 텔레메트리를 만들면서 물리와 제어 프로그래밍을 처음 시작했습니다.",
+    "p2": "그때 다루던 문제들을 지금은 실제 소프트웨어에서 다루고 있습니다. <b>궤적 솔버</b>, <b>차량 자율주행</b>, 그리고 실제 데이터를 모으고 들여다보는 도구를 만들고 있습니다.",
     "timeline_title": "배경",
-    "timeline_intro": "<b>Garry's Mod</b>의 <b>E2 / Wiremod</b>로 물리와 제어 시스템을 프로그래밍하기 시작했다. 차량 동역학, 서스펜션, 비행 모델, 텔레메트리를 만들었다.",
-    "games_detail": "적분, 피드백 제어, 계측을 익힐 수 있었던 초기 개발 환경이었다. 지금은 이 주제를 독립 솔버, 차량 소프트웨어, 데이터 수집 시스템에서 다루고 있다."
+    "timeline_intro": "<b>Garry's Mod</b>의 <b>E2 / Wiremod</b>로 물리와 제어 시스템을 프로그래밍하면서 시작했습니다. 차량 동역학, 서스펜션, 비행 모델, 텔레메트리를 직접 만들어 봤습니다.",
+    "games_detail": "적분, 피드백 제어, 계측을 몸으로 익힌 첫 개발 환경이었습니다. 지금은 같은 주제를 독립 솔버, 차량 소프트웨어, 데이터 수집 시스템에서 다루고 있습니다."
   },
   "about": {
     "h1": "소개",
-    "manifesto": "차량 자율주행, 수치 솔버, 비전, 텔레메트리 시스템을 개발하고 있다.",
-    "lead": "한국공학대학교 기계·컴퓨터공학 전공. 제어와 수치해석을 중심으로 공부하고 있다.",
+    "manifesto": "차량 자율주행, 수치 솔버, 비전, 텔레메트리 시스템을 개발하고 있습니다.",
+    "lead": "한국공학대학교에서 기계·컴퓨터공학을 전공하고 있으며, 제어와 수치해석을 중심으로 공부하고 있습니다.",
     "history_title": "지금 하는 일",
     "hist": [
-      "<b>HuVILab 자율주행 팀 리드</b> (2026–현재) — 맵리스 주차와 HERO를 포함한 차량 자율주행·비전 개발.",
-      "<b>Luxon Racing 레이스 엔지니어</b> — GT-A 클래스, O-NE 슈퍼레이스 챔피언십. 텔레메트리와 데이터 분석 담당. 2026 5라운드에서 최진욱 선수와 3위로 팀 첫 포디움.",
-      "<b>KSAE 2024 스마트 e-모빌리티(EV)</b> — 장려상.",
-      "<b>Autoware Universe autoware_carla_interface 메인테이너</b> — Autoware의 CARLA 시뮬레이터 브리지."
+      "<b>HuVILab 자율주행 팀장</b> (2026–현재) — 맵리스 주차와 HERO를 포함한 차량 자율주행·비전 개발을 맡고 있습니다.",
+      "<b>Luxon Racing 레이스 엔지니어</b> — O-NE 슈퍼레이스 챔피언십 GT-A 클래스에서 텔레메트리와 데이터 분석을 담당합니다. 2026 시즌 5라운드에서 최진욱 선수와 함께 팀 첫 포디움(3위)을 기록했습니다.",
+      "<b>KSAE 2024 스마트 e-모빌리티(EV)</b> — 장려상을 받았습니다.",
+      "<b>Autoware Universe autoware_carla_interface 메인테이너</b> — Autoware와 CARLA 시뮬레이터를 연결하는 패키지입니다."
     ],
     "open_source_title": "오픈소스",
-    "open_source": "<b>Autoware Universe</b>의 <a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>autoware_carla_interface</b></a> 메인테이너다. 센서 발행 타이밍, 캡처 주기, 캡처 프레임 타임스탬프, <code>mono8</code>/<code>bgr8</code> 카메라 출력, 깊이·시맨틱 카메라, IMU/GNSS 노이즈 설정, 기어 명령 처리까지 여덟 건의 변경이 병합됐다. 메인테이너 선임 소식은 <a href=\"https://www.ksae.org/bbs/?number=71717&mode=view&code=member\">한국자동차공학회 회원동정</a>에 게시됐다. 측정 결과는 <a href=\"https://ujinf74.github.io/contributions/\">포트폴리오</a>에 정리했다.",
+    "open_source": "<b>Autoware Universe</b>의 <a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>autoware_carla_interface</b></a> 메인테이너를 맡고 있습니다. 센서 발행 타이밍, 캡처 주기, 캡처 프레임 타임스탬프, <code>mono8</code>/<code>bgr8</code> 카메라 출력, 깊이·시맨틱 카메라, IMU/GNSS 노이즈 설정, 기어 명령 처리까지 여덟 건의 변경이 반영됐습니다. 메인테이너 선임 소식은 <a href=\"https://www.ksae.org/bbs/?number=71717&mode=view&code=member\">한국자동차공학회 회원동정</a>에도 실렸습니다. 측정 결과는 <a href=\"https://ujinf74.github.io/contributions/\">포트폴리오</a>에 정리해 두었습니다.",
     "contact_title": "연락",
     "contact": "이메일 <a href=\"mailto:ujin@tukorea.ac.kr\">ujin@tukorea.ac.kr</a><br>GitHub <a href=\"https://github.com/ujinf74\">github.com/ujinf74</a><br>YouTube <a href=\"https://www.youtube.com/@tickInt\">youtube.com/@tickInt</a><br>포트폴리오 <a href=\"https://ujinf74.github.io\">ujinf74.github.io</a><br>ORCID <a href=\"https://orcid.org/0009-0007-7339-7650\">0009-0007-7339-7650</a>",
     "pub_title": "논문",
-    "pub": "<b>권우진</b> (단독저자), 「보조해 유도 잔차를 이용한 비선형 반복 보정과 탄도 요격 적용」, <i>2026 제41회 제어·로봇·시스템학회 학술대회</i>, 대구, 2026년 7월, pp. 686–687. 이 방법은 <a href=\"/projects/ballistic-solver\">ballistic-solver</a>에 <code>solve_aux</code>로 남아 있다. <a href=\"https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12952462\">DBpia ↗</a>",
+    "pub": "<b>권우진</b> (단독저자), 「보조해 유도 잔차를 이용한 비선형 반복 보정과 탄도 요격 적용」, <i>2026 제41회 제어·로봇·시스템학회 학술대회</i>, 대구, 2026년 7월, pp. 686–687. 이 방법은 <a href=\"/projects/ballistic-solver\">ballistic-solver</a>에 <code>solve_aux</code>로 들어 있습니다. <a href=\"https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12952462\">DBpia ↗</a>",
     "press_title": "언론 보도",
-    "press_lead": "Autoware Universe 메인테이너 선임 관련 보도:"
+    "press_lead": "Autoware Universe 메인테이너 선임 소식을 다룬 기사입니다."
   },
   "projects": {
     "h1": "작업",
-    "intro": "현재 다루는 시스템을 짧게 정리한 페이지다. 구현과 결과에 관한 상세 내용은 <a href=\"https://ujinf74.github.io/projects/\">포트폴리오</a>에 두고, 이 사이트에는 배경과 인터랙티브 탄도 데모를 남겼다.",
+    "intro": "지금 다루고 있는 시스템을 간단히 소개하는 페이지입니다. 구현과 결과는 <a href=\"https://ujinf74.github.io/projects/\">포트폴리오</a>에 자세히 정리해 두었고, 이곳에는 배경 이야기와 직접 돌려볼 수 있는 탄도 데모를 두었습니다.",
     "btn_demo": "인터랙티브 데모 →",
-    "ballistic_line": "중력, 항력, 바람 조건에서 움직이는 표적을 계산하는 네이티브 요격 솔버. C++, C ABI, Python, 게임 엔진 바인딩으로 배포한다.",
-    "parking_line": "FAST-LIO 오도메트리, C++ 점유 격자, 경로 계획, 지연 보상 추종, 차량 CAN 인터페이스를 연결한 현대 아이오닉 맵리스 주차.",
-    "hero_line": "Monoscale 인지를 기반으로 주차 통로, 정지선, 기어 상태, 성능 저하 상태를 안내하는 저시력 운전자용 HUD (탐색 단계).",
-    "telemetry_line": "RTK/GNSS 수집, 버퍼 로그, 브라우저 모니터링, 현장 복구를 위한 Raspberry Pi 런타임.",
-    "gui_line": "게이트 기준 타이밍, 구간 비교, 동기화 미디어, 시뮬레이터 정합, 리포트 내보내기를 지원하는 PySide6 패키지 워크벤치.",
-    "autoware_line": "Autoware의 CARLA 시뮬레이터 브리지 메인테이너. 센서 타이밍, 캡처 주기, 타임스탬프, 카메라 출력, 센서 노이즈, 기어 처리에 걸쳐 여덟 건의 변경이 병합됐다.",
-    "monoscale_line": "알려진 카메라 높이와 지면 기하로 미터 단위 카메라 운동과 조밀 점유 지도를 구하는 학습 없는 방법. CARLA 주행 9건으로 평가했다."
+    "ballistic_line": "중력, 공기저항, 바람이 있는 조건에서 움직이는 표적을 맞히는 발사각을 계산하는 솔버입니다. C++, C ABI, Python, 게임 엔진 바인딩으로 배포하고 있습니다.",
+    "parking_line": "FAST-LIO 오도메트리, C++ 점유 격자, 경로 계획, 지연을 보상하는 경로 추종, 차량 CAN 인터페이스를 연결해 현대 아이오닉으로 지도 없이 주차하는 시스템입니다.",
+    "hero_line": "Monoscale 인지를 바탕으로 주차 통로, 정지선, 기어 상태, 인지 성능 저하를 안내하는 저시력 운전자용 HUD입니다. 현재 개발 중입니다.",
+    "telemetry_line": "RTK/GNSS 데이터 수집, 로그 버퍼링, 브라우저 모니터링, 현장 장애 복구를 담당하는 Raspberry Pi 런타임입니다.",
+    "gui_line": "게이트 기준 랩 타이밍, 구간 비교, 영상 동기화, 시뮬레이터 정합, 리포트 내보내기를 지원하는 PySide6 분석 도구입니다.",
+    "autoware_line": "Autoware와 CARLA 시뮬레이터를 연결하는 패키지의 메인테이너입니다. 센서 타이밍, 캡처 주기, 타임스탬프, 카메라 출력, 센서 노이즈, 기어 처리에 걸쳐 여덟 건의 변경을 반영했습니다.",
+    "monoscale_line": "카메라 높이와 지면 기하만으로 실제 거리 단위의 카메라 이동과 점유 지도를 구하는, 학습이 필요 없는 방법입니다. CARLA 주행 9건으로 평가했습니다."
   },
   "now": {
-    "h1": "지금",
-    "lead": "지금 만들고 쓰는 것들. 바뀌면 갱신한다.",
-    "updated": "마지막 갱신 2026-10",
+    "h1": "요즘",
+    "lead": "요즘 만들고 있는 것과 쓰고 있는 도구들입니다. 바뀌는 대로 고쳐 둡니다.",
+    "updated": "마지막 업데이트 2026-10",
     "now_title": "하는 일",
     "now": [
-      "<b>HERO</b> — Monoscale 위에 저시력 운전자용 주차 안내 HUD를 탐색 중.",
-      "<b>ballistic-solver</b>를 유지보수하고 네이티브 솔버를 엣지 하드웨어에서 검증.",
-      "<b>HuVILab</b>에서 아이오닉 맵리스 주차를 포함한 자율주행 개발을 이끎.",
-      "레이싱 텔레메트리 수집·분석 환경을 관리.",
-      "개인 웹사이트의 내용을 현재 작업에 맞게 갱신.",
-      "Autoware Universe <b>autoware_carla_interface</b> 메인테이너 — 변경 리뷰와 함께 기어 명령, 물리 서브스텝, 외부 ego 부착 제안을 진행 중.",
-      "학습 없는 미터 단위 카메라 오도메트리·조밀 점유 지도 <b>Monoscale</b> 개발."
+      "<b>HERO</b> — Monoscale을 바탕으로 저시력 운전자용 주차 안내 HUD를 만들고 있습니다.",
+      "<b>ballistic-solver</b>를 관리하면서 네이티브 솔버를 엣지 하드웨어에서 검증하고 있습니다.",
+      "<b>HuVILab</b>에서 아이오닉 맵리스 주차를 비롯한 자율주행 개발을 이끌고 있습니다.",
+      "레이싱 텔레메트리 수집·분석 환경을 운영하고 있습니다.",
+      "이 웹사이트를 지금 하는 일에 맞게 꾸준히 고치고 있습니다.",
+      "Autoware Universe <b>autoware_carla_interface</b> 메인테이너로서 변경 사항을 리뷰하고, 물리 서브스텝과 외부 ego 부착 제안을 진행하고 있습니다.",
+      "학습 없이 실제 거리 단위의 카메라 오도메트리와 점유 지도를 구하는 <b>Monoscale</b>을 개발하고 있습니다."
     ],
-    "uses_title": "쓰는 것",
+    "uses_title": "쓰는 도구",
     "uses": [
       {
         "k": "언어"
@@ -102,15 +102,15 @@
     ]
   },
   "proj_ballistic": {
-    "lead": "<b>ballistic-solver</b>는 중력, <b>이차 항력</b>, 선택적 <b>바람</b> 조건에서 움직이는 표적을 계산하는 네이티브 요격 솔버다. 현재 패키지는 좌표 잔차 Gauss–Newton 솔버를 사용하며, 이 페이지에는 별도의 브라우저 구현을 인터랙티브 데모로 제공한다.",
+    "lead": "<b>ballistic-solver</b>는 중력, <b>이차 공기저항</b>, 선택적인 <b>바람</b> 조건에서 움직이는 표적을 맞히는 발사각을 계산하는 솔버입니다. 실제 패키지는 좌표 잔차 기반 Gauss–Newton 솔버를 쓰고, 이 페이지의 데모는 브라우저용으로 따로 구현한 버전입니다.",
     "solver_title": "인터랙티브 솔버",
-    "solver_intro": "상대 위치, 상대 속도, 포구 속도를 입력하면 저각·고각 발사각과 궤적을 확인할 수 있다. 이 사이트 데모는 JavaScript와 Cloudflare Pages Function으로 구현한 RK4 항력·바람 적분, 최근접 잔차, LM 풀이를 사용한다.",
+    "solver_intro": "상대 위치, 상대 속도, 포구 속도를 입력하면 저각·고각 발사각과 궤적을 바로 확인할 수 있습니다. 이 데모는 JavaScript와 Cloudflare Pages Function으로 구현한 RK4 공기저항·바람 적분, 최근접 잔차, LM 풀이를 사용합니다.",
     "f_pos": "상대 위치 [m]",
     "f_vel": "상대 속도 [m/s]",
     "f_cond": "조건",
     "f_wind": "바람 [m/s]",
     "f_num": "수치 설정",
-    "solver_note": "좌표: x 전방, y 우측, z 상방. HTTP API는 RK4 항력/바람 + 최근접 잔차 + LM 솔버를 사용합니다.",
+    "solver_note": "좌표: x 전방, y 우측, z 상방. HTTP API는 RK4 공기저항·바람 적분과 최근접 잔차, LM 솔버를 사용합니다.",
     "low_arc": "저각",
     "high_arc": "고각",
     "waiting": "입력 대기 중",
@@ -121,10 +121,10 @@
     "legend_target": "표적",
     "note_title": "패키지와 하드웨어",
     "note": [
-      "네이티브 패키지는 현대적인 <b>C++ API</b>, 안정적인 <b>C ABI</b>, Python/PyPI, 게임 엔진 바인딩을 제공한다.",
-      "기존 보조 잔차 연구 경로는 비교와 재현을 위해 <b>solve_aux</b>로 유지한다.",
-      "네이티브 ARM64 솔버를 <b>Rock 5B</b> 비전 입력과 <b>STM32</b> 폐루프 액추에이터 제어에도 통합했다.",
-      "<b>solve_aux</b>의 보조 잔차는 단독저자 <a href=\"https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12952462\">ICROS 2026 논문</a>으로 발표했다. 고각 10,000건에서 실패율 0.00%로, 직접 시선각 보정(50.25%)보다 안정적이었다."
+      "네이티브 패키지는 현대적인 <b>C++ API</b>, 안정적인 <b>C ABI</b>, Python/PyPI, 게임 엔진 바인딩을 제공합니다.",
+      "이전의 보조 잔차 방식은 비교와 재현을 위해 <b>solve_aux</b>로 남겨 두었습니다.",
+      "네이티브 ARM64 솔버를 <b>Rock 5B</b> 비전 입력, <b>STM32</b> 폐루프 액추에이터 제어와도 통합해 실제 하드웨어에서 돌려 봤습니다.",
+      "<b>solve_aux</b>의 보조 잔차 방식은 단독저자 <a href=\"https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12952462\">ICROS 2026 논문</a>으로 발표했습니다. 고각 10,000건에서 실패율 0.00%로, 직접 시선각 보정(50.25%)보다 훨씬 안정적이었습니다."
     ]
   }
 }
