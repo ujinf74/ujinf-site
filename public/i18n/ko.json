@@ -9,7 +9,7 @@
     "btn_detailed": "상세 내용 →",
     "btn_back": "프로젝트 목록",
     "result": "결과",
-    "nav_speaking": "세미나"
+    "nav_contact": "연락"
   },
   "home": {
     "manifesto": "실제 시스템의 운동을 계산 가능한 모델로 옮기고, 시뮬레이션과 계측 결과가 어디서 달라지는지 확인하는 일을 합니다.",
@@ -31,9 +31,9 @@
     "now_summary": "Autoware의 CARLA 연동 패키지를 유지보수하며, 비전 기반 위치 추정과 차량 자율주행 시스템을 개발하고 있습니다. 수치 솔버와 텔레메트리 도구도 관리하고 있습니다.",
     "work_os_kicker": "오픈소스 · 메인테이너",
     "lead": "Autoware Universe의 <a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>autoware_carla_interface</b></a> 패키지 메인테이너입니다. 차량 소프트웨어, 수치 모델링, 시뮬레이션 검증을 주로 다룹니다.",
-    "btn_speaking": "세미나 안내 및 문의 →",
-    "speaking_title": "대학 기술 세미나",
-    "speaking_text": "대학 전공 수업과 연구실을 대상으로 자율주행 시뮬레이션, 물리 모델 검증, 오픈소스 개발 사례를 소개하는 짧은 발표가 가능합니다."
+    "contact_title": "연락·협업",
+    "contact_text": "연구·개발 협업, 세미나와 강연, Autoware·CARLA 관련 문의를 받고 있습니다.",
+    "btn_contact": "연락하기 →"
   },
   "story": {
     "title": "배경",
@@ -61,7 +61,8 @@
     "pub_title": "논문",
     "pub": "<b>권우진</b> (단독저자), 「보조해 유도 잔차를 이용한 비선형 반복 보정과 탄도 요격 적용」, <i>2026 제41회 제어·로봇·시스템학회 학술대회</i>, 대구, 2026년 7월, pp. 686–687. 이 방법은 <a href=\"/projects/ballistic-solver\">ballistic-solver</a>에 <code>solve_aux</code>로 들어 있습니다. <a href=\"https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12952462\">DBpia ↗</a>",
     "press_title": "언론 보도",
-    "press_lead": "Autoware Universe 패키지 메인테이너 선임 관련 보도입니다."
+    "press_lead": "Autoware Universe 패키지 메인테이너 선임 관련 보도입니다.",
+    "contact_link": "협업·문의 안내 →"
   },
   "projects": {
     "h1": "프로젝트",
@@ -131,23 +132,21 @@
       "<b>solve_aux</b>의 보조 잔차 방식은 단독저자 <a href=\"https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12952462\">ICROS 2026 논문</a>으로 발표했습니다. 고각 10,000건에서 실패율 0.00%로, 직접 시선각 보정(50.25%)보다 훨씬 안정적이었습니다."
     ]
   },
-  "speaking": {
-    "h1": "대학 기술 세미나",
-    "lead": "공학 전공 수업과 연구실을 대상으로 짧은 기술 발표를 진행할 수 있습니다. 실제 개발 및 오픈소스 기여 사례를 중심으로 다룹니다.",
-    "topics_title": "발표 가능 주제",
-    "topic1_title": "시뮬레이션과 실제 시스템의 차이",
-    "topic1_body": "차량 운동을 이산적인 계산 모델로 옮길 때 발생하는 시간 간격, 물리 모델, 센서 데이터의 차이를 사례로 설명합니다.",
-    "topic2_title": "Autoware–CARLA 인터페이스 개발",
-    "topic2_body": "센서 발행 주기, 타임스탬프, 카메라 데이터, 차량 제어 명령과 관련된 upstream 수정 사례를 살펴봅니다.",
-    "topic3_title": "수치 모델링과 검증",
-    "topic3_body": "운동의 수치적 계산, 모델과 계측 결과의 비교, 잔차를 통한 문제 추적을 탄도 솔버와 차량 프로젝트를 바탕으로 설명합니다.",
-    "format_title": "진행 형식",
-    "format_body": "30~50분 발표와 질의응답을 기본으로 하며, 참석자의 전공과 수준에 맞춰 내용을 조정할 수 있습니다. 한국어 발표를 기준으로 합니다.",
-    "background_title": "관련 이력",
-    "background_body": "<a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>Autoware Universe autoware_carla_interface</b></a> 패키지 메인테이너로 활동하고 있습니다. <a href=\"https://ujinf74.github.io/contributions/\">코드 기여 내역</a>, <a href=\"https://www.ksae.org/bbs/?number=71717&amp;mode=view&amp;code=member\">한국자동차공학회 회원동정</a>, <a href=\"/about\">활동·보도</a>에서 관련 자료를 확인할 수 있습니다.",
-    "inquiry_title": "초청 문의",
-    "inquiry_body": "대학 수업·연구실 세미나 관련 문의는 이메일로 받습니다. 기관, 대상, 희망 일정과 진행 방식을 함께 알려주시면 확인하겠습니다.",
-    "inquiry_btn": "이메일로 문의 →",
-    "portfolio_btn": "프로젝트·코드 기여 보기 ↗"
+  "contact": {
+    "h1": "연락",
+    "lead": "이메일로 연락 주시는 게 가장 빠릅니다. 연구 협업, 세미나·강연, 오픈소스, 언론 관련 문의 모두 받고 있습니다.",
+    "topics_title": "이런 문의를 받습니다",
+    "collab_title": "연구·개발 협업",
+    "collab_body": "자율주행 소프트웨어, 시뮬레이션과 검증, 수치 모델링, 차량 텔레메트리 분야의 공동 프로젝트, 학생 연구, 연구실 협업 모두 환영합니다.",
+    "talks_title": "세미나·강연",
+    "talks_body": "전공 수업과 연구실을 대상으로 30~50분 발표와 질의응답을 진행할 수 있습니다(기본 한국어). 시뮬레이션과 실제 차량의 차이, Autoware–CARLA 인터페이스 개발, 수치 모델링과 검증 등을 다룰 수 있습니다.",
+    "oss_title": "Autoware · autoware_carla_interface",
+    "oss_body": "<a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>autoware_carla_interface</b></a> 메인테이너를 맡고 있습니다. 버그 제보나 기능 제안은 다른 메인테이너도 함께 볼 수 있도록 <a href=\"https://github.com/autowarefoundation/autoware_universe/issues\">GitHub 이슈</a>로 남겨 주시고, 그 밖의 내용은 이메일로 편하게 연락 주세요.",
+    "press_title": "언론·기타 문의",
+    "press_body": "참고 자료는 논문과 <a href=\"https://www.ksae.org/bbs/?number=71717&amp;mode=view&amp;code=member\">관련 보도</a>를 포함해 <a href=\"/about\">소개</a> 페이지에 정리해 두었습니다.",
+    "tips_title": "함께 알려주시면 좋은 내용",
+    "tips_body": "소속, 문의 내용, 희망 일정을 알려주세요. 세미나라면 대상과 희망 날짜, 진행 방식도 함께 적어 주시면 좋습니다.",
+    "elsewhere_title": "다른 곳에서",
+    "portfolio_label": "포트폴리오"
   }
 }
