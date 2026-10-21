@@ -5,15 +5,17 @@
   d.classList.add("js");
   try {
     var t = localStorage.getItem("theme") || "dark";
-    var l = localStorage.getItem("lang") || "ko";
+    var l = localStorage.getItem("lang") ||
+      ((navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en");
     d.setAttribute("data-theme", t);
     d.setAttribute("data-lang", l);
     d.lang = l;
     if (l === "ko") d.classList.add("i18n-pending");
   } catch (e) {
     d.setAttribute("data-theme", "dark");
-    d.setAttribute("data-lang", "ko");
-    d.lang = "ko";
-    d.classList.add("i18n-pending");
+    var fl = (navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en";
+    d.setAttribute("data-lang", fl);
+    d.lang = fl;
+    if (fl === "ko") d.classList.add("i18n-pending");
   }
 })();

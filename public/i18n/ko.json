@@ -61,10 +61,7 @@
     "pub_title": "논문",
     "pub": "<b>권우진</b> (단독저자), 「보조해 유도 잔차를 이용한 비선형 반복 보정과 탄도 요격 적용」, <i>2026 제41회 제어·로봇·시스템학회 학술대회</i>, 대구, 2026년 7월, pp. 686–687. 이 방법은 <a href=\"/projects/ballistic-solver\">ballistic-solver</a>에 <code>solve_aux</code>로 들어 있습니다. <a href=\"https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12952462\">DBpia ↗</a>",
     "press_title": "언론 보도",
-    "press_lead": "Autoware Universe 패키지 메인테이너 선임 관련 보도입니다.",
-    "speaking_title": "대학 기술 세미나",
-    "speaking_note": "전공 수업·연구실 세미나를 대상으로 자율주행 시뮬레이션과 물리 기반 모델링에 관한 기술 발표를 진행할 수 있습니다.",
-    "speaking_link": "발표 주제와 문의 →"
+    "press_lead": "Autoware Universe 패키지 메인테이너 선임 관련 보도입니다."
   },
   "projects": {
     "h1": "프로젝트",
