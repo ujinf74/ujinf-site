@@ -139,13 +139,13 @@
     "collab_title": "연구·개발 협업",
     "collab_body": "자율주행 소프트웨어, 시뮬레이션과 검증, 수치 모델링, 차량 텔레메트리 분야의 공동 프로젝트, 학생 연구, 연구실 협업 모두 환영합니다.",
     "talks_title": "세미나·강연",
-    "talks_body": "전공 수업과 연구실을 대상으로 30~50분 발표와 질의응답을 진행할 수 있습니다(기본 한국어). 시뮬레이션과 실제 차량의 차이, Autoware–CARLA 인터페이스 개발, 수치 모델링과 검증 등을 다룰 수 있습니다.",
+    "talks_body": "전공 수업과 연구실을 대상으로 기술 발표를 할 수 있습니다. 시뮬레이션과 실제 차량의 차이, Autoware–CARLA 인터페이스 개발, 수치 모델링과 검증 같은 주제를 다룰 수 있습니다.",
     "oss_title": "Autoware · autoware_carla_interface",
     "oss_body": "<a href=\"https://github.com/autowarefoundation/autoware_universe/tree/main/simulator/autoware_carla_interface\"><b>autoware_carla_interface</b></a> 메인테이너를 맡고 있습니다. 버그 제보나 기능 제안은 다른 메인테이너도 함께 볼 수 있도록 <a href=\"https://github.com/autowarefoundation/autoware_universe/issues\">GitHub 이슈</a>로 남겨 주시고, 그 밖의 내용은 이메일로 편하게 연락 주세요.",
     "press_title": "언론·기타 문의",
     "press_body": "참고 자료는 논문과 <a href=\"https://www.ksae.org/bbs/?number=71717&amp;mode=view&amp;code=member\">관련 보도</a>를 포함해 <a href=\"/about\">소개</a> 페이지에 정리해 두었습니다.",
     "tips_title": "함께 알려주시면 좋은 내용",
-    "tips_body": "소속, 문의 내용, 희망 일정을 알려주세요. 세미나라면 대상과 희망 날짜, 진행 방식도 함께 적어 주시면 좋습니다.",
+    "tips_body": "소속과 문의 내용을 함께 알려주세요.",
     "elsewhere_title": "다른 곳에서",
     "portfolio_label": "포트폴리오"
   }
