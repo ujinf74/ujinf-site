@@ -150,8 +150,8 @@ body::after{
 }
 
 .site-title{
-  font-family:var(--font-mono);
-  font-size:26px;
+  font-family:var(--font-sans, system-ui, sans-serif);
+  font-size:34px;
   line-height:1.2;
   font-weight:400;
   letter-spacing:0;
